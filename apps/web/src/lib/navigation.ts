@@ -32,10 +32,15 @@ export const getNavigationData = async () => {
     cleanNavbar.columns = [
       { _key: "nav-about", type: "link", name: "About Us", href: "/about" },
       { _key: "nav-project", type: "link", name: "Project", href: "/project" },
-      { _key: "nav-blog", type: "link", name: "Blog", href: "/blog" }
+      { _key: "nav-blog", type: "link", name: "Blog", href: "/blog" },
     ];
     cleanNavbar.buttons = [
-      { _key: "nav-work-with-us", label: "Work with us", href: "/work-with-us", variant: "primary" }
+      {
+        _key: "nav-work-with-us",
+        label: "Work with us",
+        href: "/work-with-us",
+        variant: "primary",
+      },
     ];
   }
 

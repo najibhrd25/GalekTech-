@@ -32,7 +32,8 @@ const MOCK_PROJECTS: MockProject[] = [
     id: "galekcloud",
     title: "GalekCloud Platform",
     category: "Infrastructure",
-    description: "Next-generation decentralized serverless hosting with globally distributed edge nodes and sub-millisecond cold starts.",
+    description:
+      "Next-generation decentralized serverless hosting with globally distributed edge nodes and sub-millisecond cold starts.",
     upvotes: 142,
     views: 1205,
     author: { name: "Alex Rivers", avatarInitials: "AR" },
@@ -42,7 +43,8 @@ const MOCK_PROJECTS: MockProject[] = [
     id: "novaai",
     title: "NovaAI Agents",
     category: "Artificial Intelligence",
-    description: "Autonomous AI agent workflows designed for enterprise software integration, automating repetitive processes securely.",
+    description:
+      "Autonomous AI agent workflows designed for enterprise software integration, automating repetitive processes securely.",
     upvotes: 98,
     views: 894,
     author: { name: "Sarah Chen", avatarInitials: "SC" },
@@ -52,7 +54,8 @@ const MOCK_PROJECTS: MockProject[] = [
     id: "pulseanalytics",
     title: "Pulse Telemetry",
     category: "Developer Tools",
-    description: "Real-time telemetry and user-flow monitoring dashboard built specifically for high-traffic modern SaaS products.",
+    description:
+      "Real-time telemetry and user-flow monitoring dashboard built specifically for high-traffic modern SaaS products.",
     upvotes: 87,
     views: 742,
     author: { name: "Marcus Brody", avatarInitials: "MB" },
@@ -62,7 +65,8 @@ const MOCK_PROJECTS: MockProject[] = [
     id: "decentrust",
     title: "DecenTrust Audit",
     category: "Web3",
-    description: "Automated smart contract security auditing and continuous verification for multi-chain decentralized applications.",
+    description:
+      "Automated smart contract security auditing and continuous verification for multi-chain decentralized applications.",
     upvotes: 112,
     views: 933,
     author: { name: "Elena Rostova", avatarInitials: "ER" },
@@ -72,7 +76,8 @@ const MOCK_PROJECTS: MockProject[] = [
     id: "auradesign",
     title: "Aura Design System",
     category: "Design Systems",
-    description: "AI-driven component generator that curates and builds harmonious design systems and UI libraries dynamically.",
+    description:
+      "AI-driven component generator that curates and builds harmonious design systems and UI libraries dynamically.",
     upvotes: 130,
     views: 1045,
     author: { name: "Liam Miller", avatarInitials: "LM" },
@@ -82,7 +87,8 @@ const MOCK_PROJECTS: MockProject[] = [
     id: "shieldops",
     title: "ShieldOps Zero Trust",
     category: "Security",
-    description: "Zero-trust DevOps pipelines featuring automatic dependency scanning, vulnerability patching, and secure key vaults.",
+    description:
+      "Zero-trust DevOps pipelines featuring automatic dependency scanning, vulnerability patching, and secure key vaults.",
     upvotes: 75,
     views: 610,
     author: { name: "Kenji Sato", avatarInitials: "KS" },
@@ -124,11 +130,13 @@ export function TopPitches({ eyebrow, title }: TopPitchesProps) {
                 <article className="group relative flex h-full flex-col overflow-hidden rounded-2xl bg-white ring-1 ring-neutral-200/80 transition duration-300 hover:ring-pink-300/60 hover:shadow-lg hover:shadow-pink-500/5 dark:bg-neutral-900 dark:ring-white/10 dark:hover:ring-pink-500/30 dark:hover:shadow-pink-500/10">
                   <div className="flex h-full flex-col">
                     {/* Visual Cover Header */}
-                    <div className={`relative aspect-video w-full overflow-hidden bg-gradient-to-br ${project.color} flex items-center justify-center p-6`}>
+                    <div
+                      className={`relative aspect-video w-full overflow-hidden bg-gradient-to-br ${project.color} flex items-center justify-center p-6`}
+                    >
                       <span className="text-2xl font-bold text-white drop-shadow-md text-center">
                         {project.title}
                       </span>
-                      
+
                       {/* Dark gradient overlay */}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
 
@@ -195,4 +203,3 @@ export function TopPitches({ eyebrow, title }: TopPitchesProps) {
     </section>
   );
 }
-

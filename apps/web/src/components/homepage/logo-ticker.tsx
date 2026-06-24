@@ -31,10 +31,13 @@ export function LogoTicker({ title, logos, speed = 30 }: LogoTickerProps) {
           >
             {Array.from({ length: 2 }).map((_, index) => (
               <div key={index} className="flex items-center gap-16">
-                 {logos.map((logo) => {
+                {logos.map((logo) => {
                   if (logo?.id?.startsWith("mock-logo-")) {
                     return (
-                      <span key={logo.id} className="text-2xl font-bold tracking-tight text-neutral-400 dark:text-neutral-600">
+                      <span
+                        key={logo.id}
+                        className="text-2xl font-bold tracking-tight text-neutral-400 dark:text-neutral-600"
+                      >
                         {logo.alt}
                       </span>
                     );
