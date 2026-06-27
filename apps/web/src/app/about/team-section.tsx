@@ -14,11 +14,11 @@ interface TeamMember {
 
 const TEAM_MEMBERS: TeamMember[] = [
   {
-    name: "Najib",
+    name: "Najib Bahrudin",
     role: "Product Manajer",
     image: "/images/najib.jpeg",
-    scale: 1.0, // Sesuaikan zoom di sini
-    objectPosition: "50% 50%", // Sesuaikan geser kanan-kiri (X) dan atas-bawah (Y) di sini
+    scale: 1.5, // Sesuaikan zoom di sini
+    objectPosition: "50% 70%", // Sesuaikan geser kanan-kiri (X) dan atas-bawah (Y) di sini
   },
   {
     name: "Dimas",
@@ -28,11 +28,11 @@ const TEAM_MEMBERS: TeamMember[] = [
     objectPosition: "50% 50%", // Sesuaikan geser kanan-kiri (X) dan atas-bawah (Y) di sini
   },
   {
-    name: "Dapa",
+    name: "Daffa",
     role: "Frontend Engineer",
     image: "/images/Dapa.jpg",
     scale: 1.3, // Sesuaikan zoom di sini
-    objectPosition: "50% 30%", // Sesuaikan geser kanan-kiri (X) dan atas-bawah (Y) di sini
+    objectPosition: "50% 10%", // Sesuaikan geser kanan-kiri (X) dan atas-bawah (Y) di sini
   },
 ];
 
@@ -59,6 +59,7 @@ export function TeamSection() {
                 className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-out"
                 style={{
                   objectPosition: person.objectPosition,
+                  transformOrigin: person.objectPosition,
                 }}
                 initial={{ scale: person.scale }}
                 whileHover={{ scale: person.scale * 1.05 }}
