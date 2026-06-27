@@ -15,7 +15,7 @@ interface TeamMember {
 const TEAM_MEMBERS: TeamMember[] = [
   {
     name: "Najib",
-    role: "Founder & Fullstack Developer",
+    role: "Product Manajer",
     image: "/images/najib.jpeg",
     scale: 1.0, // Sesuaikan zoom di sini
     objectPosition: "50% 50%", // Sesuaikan geser kanan-kiri (X) dan atas-bawah (Y) di sini
@@ -29,10 +29,10 @@ const TEAM_MEMBERS: TeamMember[] = [
   },
   {
     name: "Dapa",
-    role: "UI/UX & Product Designer",
+    role: "Frontend Engineer",
     image: "/images/Dapa.jpg",
-    scale: 1.0, // Sesuaikan zoom di sini
-    objectPosition: "50% 60%", // Sesuaikan geser kanan-kiri (X) dan atas-bawah (Y) di sini
+    scale: 1.3, // Sesuaikan zoom di sini
+    objectPosition: "50% 30%", // Sesuaikan geser kanan-kiri (X) dan atas-bawah (Y) di sini
   },
 ];
 
@@ -51,7 +51,7 @@ export function TeamSection() {
             {/* Image Container with Zoom trigger */}
             <div
               onClick={() => setSelectedImage(person.image)}
-              className="w-full aspect-[4/5] bg-neutral-900 overflow-hidden mb-4 rounded-2xl relative cursor-zoom-in border border-neutral-800/40 hover:border-pink-500/30 transition-all duration-300"
+              className="w-full aspect-[4/5] bg-neutral-900 overflow-hidden mb-4 rounded-2xl relative cursor-zoom-in border border-neutral-800/40 transition-all duration-300"
             >
               <motion.img
                 src={person.image}
