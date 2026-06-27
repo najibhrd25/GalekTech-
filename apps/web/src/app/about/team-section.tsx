@@ -8,7 +8,8 @@ interface TeamMember {
   name: string;
   role: string;
   image: string;
-  bio: string;
+  scale: number; // Mengatur zoom per orang (contoh: 1.0, 1.15, 1.25)
+  objectPosition: string; // Mengatur geser kanan-kiri/atas-bawah per orang (contoh: "center", "50% 20%")
 }
 
 const TEAM_MEMBERS: TeamMember[] = [
@@ -16,19 +17,22 @@ const TEAM_MEMBERS: TeamMember[] = [
     name: "Najib",
     role: "Founder & Fullstack Developer",
     image: "/images/najib.jpeg",
-    bio: "Pecinta teknologi yang berfokus membangun solusi digital inovatif untuk memberdayakan UMKM lokal.",
+    scale: 1.0, // Sesuaikan zoom di sini
+    objectPosition: "50% 50%", // Sesuaikan geser kanan-kiri (X) dan atas-bawah (Y) di sini
   },
   {
     name: "Dimas",
     role: "Frontend Engineer",
     image: "/images/dimas.jpg",
-    bio: "Spesialis pembuat antarmuka web yang interaktif, cepat, dan ramah pengguna dengan estetika modern.",
+    scale: 1.0, // Sesuaikan zoom di sini
+    objectPosition: "50% 50%", // Sesuaikan geser kanan-kiri (X) dan atas-bawah (Y) di sini
   },
   {
     name: "Dapa",
     role: "UI/UX & Product Designer",
     image: "/images/Dapa.jpg",
-    bio: "Desainer kreatif yang mendedikasikan karyanya untuk menciptakan pengalaman pengguna yang memukau dan fungsional.",
+    scale: 1.0, // Sesuaikan zoom di sini
+    objectPosition: "50% 60%", // Sesuaikan geser kanan-kiri (X) dan atas-bawah (Y) di sini
   },
 ];
 
@@ -49,30 +53,24 @@ export function TeamSection() {
               onClick={() => setSelectedImage(person.image)}
               className="w-full aspect-[4/5] bg-neutral-900 overflow-hidden mb-4 rounded-2xl relative cursor-zoom-in border border-neutral-800/40 hover:border-pink-500/30 transition-all duration-300"
             >
-              <img
+              <motion.img
                 src={person.image}
                 alt={person.name}
-                className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out"
+                className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-out"
+                style={{
+                  objectPosition: person.objectPosition,
+                }}
+                initial={{ scale: person.scale }}
+                whileHover={{ scale: person.scale * 1.05 }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
               />
-
-              {/* Overlay with Zoom Icon */}
-              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <div className="bg-pink-500 text-white p-3 rounded-full shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                  <ZoomIn size={24} />
-                </div>
-              </div>
             </div>
 
             {/* Info */}
             <h3 className="text-2xl font-bold text-white leading-tight mb-1">
               {person.name}
             </h3>
-            <p className="text-pink-500 text-base font-medium mb-2">
-              {person.role}
-            </p>
-            <p className="text-neutral-400 text-sm leading-relaxed">
-              {person.bio}
-            </p>
+            <p className="text-pink-500 text-base font-medium">{person.role}</p>
           </div>
         ))}
       </div>
