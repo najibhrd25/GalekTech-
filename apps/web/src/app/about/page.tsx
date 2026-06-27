@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { TeamSection } from "./team-section";
 
 export const metadata: Metadata = {
   title: "About Us | GalekTech",
@@ -191,51 +192,8 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Team Section (Reference 3) */}
-      <section className="w-full max-w-7xl px-4 sm:px-6 md:px-8 mb-24">
-        <h2 className="text-4xl font-bold mb-16 text-center text-white">
-          People Behind GalekTech
-        </h2>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-          {[
-            {
-              name: "Nanda",
-              role: "Frontend Engineer",
-              image:
-                "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&q=80&w=400&h=400",
-            },
-            {
-              name: "Reza",
-              role: "Backend Engineer",
-              image:
-                "https://images.unsplash.com/photo-1599566150163-29194dcaad36?auto=format&fit=crop&q=80&w=400&h=400",
-            },
-            {
-              name: "Luvian",
-              role: "Product Designer",
-              image:
-                "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=400&h=400",
-            },
-          ].map((person, idx) => (
-            <div key={idx} className="flex flex-col">
-              <div className="w-full aspect-[4/5] bg-neutral-900 overflow-hidden mb-4">
-                <img
-                  src={person.image}
-                  alt={person.name}
-                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500 ease-out"
-                />
-              </div>
-              <h3 className="text-2xl font-bold text-white leading-tight mb-1">
-                {person.name}
-              </h3>
-              <p className="text-pink-500 text-base font-medium">
-                {person.role}
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
+      {/* Team Section */}
+      <TeamSection />
     </main>
   );
 }

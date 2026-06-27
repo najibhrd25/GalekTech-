@@ -1,10 +1,10 @@
 import { cn } from "@workspace/ui/lib/utils";
 import Image from "next/image";
 
-import avatar1 from "@/../public/images/avatar-ashwin-santiago.jpg";
-import avatar3 from "@/../public/images/avatar-florence-shaw.jpg";
-import avatar2 from "@/../public/images/avatar-lula-meyers.jpg";
-import avatar4 from "@/../public/images/avatar-owen-garcia.jpg";
+import avatar1 from "@/../public/images/najib.jpeg";
+import avatar2 from "@/../public/images/dimas.jpg";
+import avatar3 from "@/../public/images/Dapa.jpg";
+import avatar4 from "@/../public/images/najib.jpeg";
 import { Tag } from "@/components/shared/tag";
 import type { PagebuilderType } from "@/types";
 import { RichText } from "../elements/rich-text";
@@ -23,17 +23,17 @@ const GRID_CLASSES = [
 
 function AvatarsAnimation() {
   const avatars = [
-    { src: avatar1, alt: "Avatar 1", border: "", z: "z-40", ml: "" },
+    { src: avatar1, alt: "Najib", border: "", z: "z-40", ml: "" },
     {
       src: avatar2,
-      alt: "Avatar 2",
+      alt: "Dimas",
       border: "border-indigo-500",
       z: "z-30",
       ml: "-ml-6",
     },
     {
       src: avatar3,
-      alt: "Avatar 3",
+      alt: "Dapa",
       border: "border-amber-500",
       z: "z-20",
       ml: "-ml-6",
