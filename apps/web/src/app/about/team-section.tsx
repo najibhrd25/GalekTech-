@@ -31,8 +31,8 @@ const TEAM_MEMBERS: TeamMember[] = [
     name: "Daffa",
     role: "Frontend Engineer",
     image: "/images/Dapa.jpg",
-    scale: 1.3, // Sesuaikan zoom di sini
-    objectPosition: "50% 10%", // Sesuaikan geser kanan-kiri (X) dan atas-bawah (Y) di sini
+    scale: 1.2, // Sesuaikan zoom di sini
+    objectPosition: "50% -60%", // Sesuaikan geser kanan-kiri (X) dan atas-bawah (Y) di sini
   },
 ];
 
@@ -51,7 +51,7 @@ export function TeamSection() {
             {/* Image Container with Zoom trigger */}
             <div
               onClick={() => setSelectedImage(person.image)}
-              className="w-full aspect-[4/5] bg-neutral-900 overflow-hidden mb-4 rounded-2xl relative cursor-zoom-in border border-neutral-800/40 transition-all duration-300"
+              className="w-full aspect-[4/3] bg-neutral-900 overflow-hidden mb-4 rounded-2xl relative cursor-zoom-in border border-neutral-800/40 transition-all duration-300"
             >
               <motion.img
                 src={person.image}
