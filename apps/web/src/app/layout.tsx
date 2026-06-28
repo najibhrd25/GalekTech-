@@ -13,6 +13,7 @@ import { Navbar } from "@/components/navbar";
 import { PreviewBar } from "@/components/preview-bar";
 import { Providers } from "@/components/providers";
 import { ServiceWorkerRegister } from "@/components/sw-register";
+import { SplashScreen } from "@/components/splash-screen";
 
 const fontSans = Geist({
   subsets: ["latin"],
@@ -37,6 +38,7 @@ export default async function RootLayout({
         className={`${fontSans.variable} ${fontMono.variable} font-sans antialiased`}
       >
         <Providers>
+          <SplashScreen />
           <Navbar />
           {children}
           <Suspense fallback={<FooterSkeleton />}>

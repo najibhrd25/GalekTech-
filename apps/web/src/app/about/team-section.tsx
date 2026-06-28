@@ -28,7 +28,7 @@ const TEAM_MEMBERS: TeamMember[] = [
     objectPosition: "50% 50%", // Sesuaikan geser kanan-kiri (X) dan atas-bawah (Y) di sini
   },
   {
-    name: "Daffa",
+    name: "Dava",
     role: "Frontend Engineer",
     image: "/images/Dapa.jpg",
     scale: 1.2, // Sesuaikan zoom di sini
