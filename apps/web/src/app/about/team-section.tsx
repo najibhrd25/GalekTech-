@@ -51,7 +51,7 @@ export function TeamSection() {
             {/* Image Container with Zoom trigger */}
             <div
               onClick={() => setSelectedImage(person.image)}
-              className="w-full aspect-[4/3] bg-neutral-900 overflow-hidden mb-4 rounded-2xl relative cursor-zoom-in border border-neutral-800/40 transition-all duration-300"
+              className="w-full aspect-[3/4] bg-neutral-900 overflow-hidden mb-4 rounded-2xl relative cursor-zoom-in border border-neutral-800/40 transition-all duration-300"
             >
               <motion.img
                 src={person.image}
