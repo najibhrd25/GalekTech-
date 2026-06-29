@@ -17,6 +17,8 @@ import { useState } from "react";
 const STATIC_LINKS = [
   { name: "About Us", href: "/about" },
   { name: "Project", href: "/project" },
+  { name: "Blog", href: "/blog" },
+  { name: "Resources", href: "/resources" },
 ];
 
 export function MobileMenu() {
