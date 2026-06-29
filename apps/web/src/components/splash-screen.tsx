@@ -7,12 +7,20 @@ export function SplashScreen() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    // Periksa apakah splash screen sudah pernah muncul di sesi ini
+    const hasPlayed = sessionStorage.getItem("galektech-splash-played");
+    if (hasPlayed) {
+      setLoading(false);
+      return;
+    }
+
     // Kunci scroll body saat splash screen sedang berjalan
     document.body.style.overflow = "hidden";
 
     const timer = setTimeout(() => {
       setLoading(false);
       document.body.style.overflow = "";
+      sessionStorage.setItem("galektech-splash-played", "true");
     }, 2000);
 
     return () => {
