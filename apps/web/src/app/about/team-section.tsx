@@ -12,7 +12,7 @@ interface TeamMember {
   objectPosition: string; // Mengatur geser kanan-kiri/atas-bawah per orang (contoh: "center", "50% 20%")
 }
 
-const TEAM_MEMBERS: TeamMember[] = [
+export const TEAM_MEMBERS: TeamMember[] = [
   {
     name: "Najib Bahrudin",
     role: "Product Manajer",
