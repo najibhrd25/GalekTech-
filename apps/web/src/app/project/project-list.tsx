@@ -20,7 +20,7 @@ interface Project {
   };
 }
 
-const PROJECTS: Project[] = [
+export const PROJECTS: Project[] = [
   {
     title: "Introduction to Machine Learning dengan Python",
     category: "# Tech",
