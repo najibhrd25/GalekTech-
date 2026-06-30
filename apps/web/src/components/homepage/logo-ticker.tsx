@@ -1,59 +1,106 @@
 "use client";
 
-import { motion } from "motion/react";
+import { motion, useInView, animate } from "motion/react";
+import { useEffect, useRef, useState } from "react";
 
-import { SanityImage } from "@/components/elements/sanity-image";
+import { TEAM_MEMBERS } from "@/app/about/team-section";
+import { PROJECTS } from "@/app/project/project-list";
 import type { PagebuilderType } from "@/types";
 
 type LogoTickerProps = PagebuilderType<"logoTickerSection">;
 
-export function LogoTicker({ title, logos, speed = 30 }: LogoTickerProps) {
-  if (!logos || logos.length === 0) return null;
+function StatItem({
+  value,
+  suffix,
+  label,
+}: {
+  value: number;
+  suffix: string;
+  label: string;
+}) {
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const [displayValue, setDisplayValue] = useState(0);
+
+  useEffect(() => {
+    if (isInView) {
+      let elapsed = 0;
+      const spinDuration = 1200; // Durasi putaran cepat (1.2 detik)
+      const intervalTime = 50; // Kecepatan acak angka berganti
+      let activeControls: any = null;
+
+      const spinInterval = setInterval(() => {
+        elapsed += intervalTime;
+        if (elapsed < spinDuration) {
+          // Menampilkan angka acak ratusan agar terkesan spin cepat
+          setDisplayValue(Math.floor(Math.random() * 900) + 100);
+        } else {
+          clearInterval(spinInterval);
+          // Deselerasi (melambat) halus dari angka acak puluhan ke nilai target asli
+          const startDeceleration = Math.floor(Math.random() * 150) + 50;
+          activeControls = animate(startDeceleration, value, {
+            duration: 1.2,
+            ease: "easeOut",
+            onUpdate(v) {
+              setDisplayValue(Math.round(v));
+            },
+          });
+        }
+      }, intervalTime);
+
+      return () => {
+        clearInterval(spinInterval);
+        if (activeControls) activeControls.stop();
+      };
+    }
+  }, [isInView, value]);
 
   return (
-    <section className="overflow-x-clip py-24">
-      <div className="container">
-        {title && (
-          <h3 className="text-center text-xl text-neutral-500 dark:text-white/50">
-            {title}
-          </h3>
-        )}
+    <div ref={ref} className="flex flex-col items-center justify-center p-6 text-center">
+      <div className="flex items-baseline gap-1 text-5xl md:text-6xl font-bold text-white mb-2">
+        {displayValue}
+        <span className="text-pink-500">{suffix}</span>
+      </div>
+      <p className="text-neutral-400 text-sm md:text-base uppercase tracking-widest font-medium">
+        {label}
+      </p>
+    </div>
+  );
+}
 
-        <div className="mt-12 flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
-          <motion.div
-            animate={{ x: "-50%" }}
-            transition={{
-              duration: speed,
-              ease: "linear",
-              repeat: Infinity,
-            }}
-            className="flex flex-none items-center gap-16 pr-24"
-          >
-            {Array.from({ length: 2 }).map((_, index) => (
-              <div key={index} className="flex items-center gap-16">
-                {logos.map((logo) => {
-                  if (logo?.id?.startsWith("mock-logo-")) {
-                    return (
-                      <span
-                        key={logo.id}
-                        className="text-2xl font-bold tracking-tight text-neutral-400 dark:text-neutral-600"
-                      >
-                        {logo.alt}
-                      </span>
-                    );
-                  }
-                  return logo?.id ? (
-                    <SanityImage
-                      key={logo.id}
-                      image={logo}
-                      height={48}
-                      className="h-12 w-auto opacity-80 invert dark:invert-0"
-                    />
-                  ) : null;
-                })}
-              </div>
+export function LogoTicker(props: LogoTickerProps) {
+  // Hitung selisih bulan dari Maret 2026 (Bulan ke-2, karena index mulai dari 0)
+  const startDate = new Date(2026, 2, 1); // 1 Maret 2026
+  const currentDate = new Date();
+  const monthsExperience = Math.max(
+    0,
+    (currentDate.getFullYear() - startDate.getFullYear()) * 12 +
+      currentDate.getMonth() -
+      startDate.getMonth()
+  );
+
+  const stats = [
+    { value: monthsExperience, suffix: "+", label: "Month Experience" },
+    { value: TEAM_MEMBERS.length, suffix: "+", label: "Members" },
+    { value: 3, suffix: "", label: "Blogs" },
+    { value: PROJECTS.length, suffix: "", label: "Projects" },
+  ];
+
+  return (
+    <section className="pt-2 pb-16">
+      <div className="container">
+        {/* Garis atas dan bawah untuk membungkus stats */}
+        <div className="border-y border-white/10 py-12">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4">
+            {stats.map((stat, idx) => (
+              <StatItem
+                key={idx}
+                value={stat.value}
+                suffix={stat.suffix}
+                label={stat.label}
+              />
             ))}
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>
