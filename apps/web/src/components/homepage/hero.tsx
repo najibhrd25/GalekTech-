@@ -117,7 +117,7 @@ export function Hero(props: HeroProps) {
   return (
     <section
       ref={sectionRef}
-      className="hero-cursor relative mx-auto max-w-screen-2xl overflow-x-clip min-h-[92vh] flex flex-col justify-center pt-24 pb-4"
+      className="hero-cursor relative mx-auto max-w-screen-2xl overflow-x-clip min-h-[80vh] md:min-h-[92vh] flex flex-col justify-center pt-24 pb-4"
     >
       <div className="container relative">
         {/* Left decorative card */}
@@ -213,13 +213,13 @@ export function Hero(props: HeroProps) {
           )}
 
           {title && (
-            <h1 className="mx-auto mt-6 max-w-4xl text-center text-5xl font-medium md:text-6xl lg:text-8xl">
+            <h1 className="mx-auto mt-6 max-w-4xl text-center text-4xl sm:text-5xl md:text-6xl lg:text-8xl">
               {title}
             </h1>
           )}
 
           {subtitle && (
-            <p className="mx-auto mt-6 max-w-md text-center text-base text-neutral-500 dark:text-white/50 md:mt-8 md:max-w-2xl md:text-xl">
+            <p className="mx-auto mt-6 max-w-md text-center text-sm sm:text-base text-neutral-500 dark:text-white/50 md:mt-8 md:max-w-2xl md:text-xl">
               {subtitle}
             </p>
           )}
@@ -229,7 +229,7 @@ export function Hero(props: HeroProps) {
               buttons={buttons}
               size="lg"
               buttonClassName="w-full sm:w-auto"
-              className="pointer-events-auto mt-8 flex flex-col items-center justify-center gap-4 md:mt-10 md:flex-row"
+              className="pointer-events-auto mt-8 flex flex-col items-center justify-center gap-4 md:mt-10 sm:flex-row"
             />
           )}
         </div>
