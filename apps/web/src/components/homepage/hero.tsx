@@ -117,7 +117,7 @@ export function Hero(props: HeroProps) {
   return (
     <section
       ref={sectionRef}
-      className="hero-cursor relative mx-auto max-w-screen-2xl overflow-x-clip pt-32"
+      className="hero-cursor relative mx-auto max-w-screen-2xl overflow-x-clip min-h-[92vh] flex flex-col justify-center pt-24 pb-4"
     >
       <div className="container relative">
         {/* Left decorative card */}
@@ -140,7 +140,7 @@ export function Hero(props: HeroProps) {
           transition={{
             rotate: { duration: 6, repeat: Infinity, ease: "easeInOut" },
           }}
-          className="absolute -left-44 top-16 z-10 hidden lg:block xl:-left-32"
+          className="absolute -left-44 top-[20%] z-10 hidden lg:block xl:-left-32"
         >
           <DecorativePitchCardLeft />
         </motion.div>
@@ -148,11 +148,11 @@ export function Hero(props: HeroProps) {
           ref={leftPointerScope}
           initial={{ opacity: 0, y: 100, x: -200 }}
           style={{ translateX: leftPtrX, translateY: leftPtrY }}
-          className="pointer-events-none absolute left-32 top-96 z-10 hidden lg:block xl:left-48"
+          className="pointer-events-none absolute left-32 top-[65%] z-10 hidden lg:block xl:left-48"
         >
           <Pointer name="Andrea" />
         </motion.div>
-
+ 
         {/* Right decorative card */}
         <motion.div
           ref={rightDesignScope}
@@ -173,7 +173,7 @@ export function Hero(props: HeroProps) {
           transition={{
             rotate: { duration: 5, repeat: Infinity, ease: "easeInOut" },
           }}
-          className="absolute -right-44 -top-4 z-10 hidden lg:block xl:-right-22"
+          className="absolute -right-44 top-[15%] z-10 hidden lg:block xl:-right-22"
         >
           <DecorativePitchCardRight />
         </motion.div>
@@ -181,7 +181,7 @@ export function Hero(props: HeroProps) {
           ref={rightPointerScope}
           initial={{ opacity: 0, x: 275, y: 100 }}
           style={{ translateX: rightPtrX, translateY: rightPtrY }}
-          className="pointer-events-none absolute right-48 top-64 z-10 hidden lg:block xl:right-64"
+          className="pointer-events-none absolute right-48 top-[55%] z-10 hidden lg:block xl:right-64"
         >
           <Pointer name="Bryan" color="red" />
         </motion.div>
