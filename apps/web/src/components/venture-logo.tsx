@@ -12,7 +12,7 @@ export function VentureLogo() {
         src="/galektech.png"
         alt="GalekTech Logo"
         // PANDUAN UKURAN LOGO: Ubah nilai 'height' di bawah (contoh: "50px", "45px", "60px")
-        style={{ height: "50px", width: "auto", display: "block" }}
+        style={{ height: "36px", width: "auto", display: "block" }}
         className="object-contain"
       />
     </Link>
