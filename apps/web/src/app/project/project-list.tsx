@@ -93,44 +93,32 @@ export const PROJECTS: Project[] = [
 
 export function ProjectList() {
   return (
-    <div className="flex flex-col gap-12 md:gap-16 w-full">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 w-full">
       {PROJECTS.map((project, idx) => {
-        const isEven = idx % 2 === 0;
         return (
           <motion.div
             key={idx}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.6, delay: idx * 0.1 }}
-            className={`flex flex-col ${
-              isEven ? "md:flex-row" : "md:flex-row-reverse"
-            } gap-8 md:gap-12 p-6 md:p-8 bg-[#09090b] border border-neutral-900 rounded-3xl overflow-hidden hover:border-neutral-800/80 hover:${project.color.hoverGlow} transition-all duration-500 group`}
+            className="flex flex-col group"
           >
-            {/* Image Container */}
-            <div className="w-full md:w-[45%] lg:w-[48%] shrink-0 aspect-[16/10] overflow-hidden rounded-2xl relative bg-neutral-950">
+            {/* Image Container with premium inner mockup framing */}
+            <div className="w-full aspect-[4/3] overflow-hidden rounded-3xl relative bg-gradient-to-br from-[#0c1618] to-[#040809] border border-neutral-900 p-6 flex items-center justify-center group-hover:border-neutral-800/80 transition-all duration-500 shadow-lg">
               <img
                 src={project.image}
                 alt={project.title}
-                className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-700 ease-out"
+                className="w-full h-full object-cover rounded-2xl group-hover:scale-[1.03] transition-transform duration-700 ease-out shadow-md"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#09090b] via-transparent to-transparent opacity-40" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none rounded-3xl" />
             </div>
 
             {/* Content Side */}
-            <div className="flex flex-col flex-1 justify-center space-y-4 md:space-y-5">
-              {/* Category Badge */}
-              <div className="flex">
-                <span
-                  className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium tracking-wide border ${project.color.badgeBg} ${project.color.badgeText} ${project.color.badgeBorder}`}
-                >
-                  {project.category}
-                </span>
-              </div>
-
+            <div className="flex flex-col mt-5 space-y-1.5 px-2">
               {/* Title */}
-              <h3 className="text-xl md:text-2xl lg:text-3xl font-semibold tracking-tight text-white leading-tight group-hover:text-neutral-100 transition-colors">
+              <h3 className="text-xl font-bold text-white leading-tight group-hover:text-pink-500 transition-colors duration-300">
                 {project.title}
               </h3>
 
@@ -138,32 +126,6 @@ export function ProjectList() {
               <p className="text-neutral-400 text-sm md:text-base leading-relaxed font-normal">
                 {project.description}
               </p>
-
-              {/* Info Row */}
-              <div className="flex items-center gap-5 text-xs md:text-sm text-neutral-500 font-medium">
-                <span className="flex items-center gap-1.5">
-                  <Calendar size={14} className="stroke-[2px]" />
-                  {project.date}
-                </span>
-                <span className="flex items-center gap-1.5">
-                  <Clock size={14} className="stroke-[2px]" />
-                  {project.readingTime}
-                </span>
-              </div>
-
-              {/* Read More Link */}
-              <div className="pt-2">
-                <Link
-                  href={`/project/${idx}`}
-                  className={`inline-flex items-center gap-2 text-sm md:text-base font-semibold group/link transition-all ${project.color.linkText}`}
-                >
-                  Read more
-                  <ArrowRight
-                    size={16}
-                    className="transform group-hover/link:translate-x-1 transition-transform duration-300"
-                  />
-                </Link>
-              </div>
             </div>
           </motion.div>
         );
