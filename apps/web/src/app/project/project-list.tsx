@@ -19,96 +19,136 @@ interface Project {
 
 export const PROJECTS: Project[] = [
   {
-    title: "Introduction to Machine Learning dengan Python",
-    category: "# Tech",
+    title: "Unfold Coffee",
+    category: "# Food & Beverage",
     description:
-      "Panduan dasar memahami machine learning, mulai dari konsep dasar hingga implementasi sederhana menggunakan Python.",
+      "Website profil interaktif dan menu digital modern untuk menyajikan varian kopi robusta lokal khas Trenggalek.",
     image:
-      "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&q=80&w=800&h=500",
+      "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&q=80&w=800&h=500",
     date: "Jan 15",
-    readingTime: "8 min",
-    techstack: ["python", "pandas", "jupyter"],
+    readingTime: "5 min",
+    techstack: ["nextjs", "tailwindcss", "typescript"],
     liveUrl: "https://github.com",
     githubUrl: "https://github.com",
-    contentMarkdown: `## Pengenalan Proyek
-Proyek ini dibuat sebagai wadah pembelajaran interaktif bagi pemula yang ingin memahami konsep kecerdasan buatan (*Artificial Intelligence*) menggunakan bahasa Python.
+    contentMarkdown: `## Profil Unfold Coffee
+Unfold Coffee adalah titik temu para pecinta kopi di Trenggalek, menyajikan biji kopi robusta lokal berkualitas dengan nuansa modern.
 
-### Pembahasan Utama
-- **Dasar Statistika:** Pemahaman data numerik dan kategori.
-- **Supervised Learning:** Regresi linear dan klasifikasi dasar.
-- **Unsupervised Learning:** Pengelompokan data dengan K-Means.
+### Inisiatif Digital
+- **Menu Digital QR:** Pengunjung dapat memindai kode QR di meja untuk melihat menu lengkap secara real-time.
+- **Profil Toko:** Menyajikan filosofi penyeduhan kopi dan sejarah kerja sama dengan petani kopi lokal.
 
-### Teknologi Yang Digunakan
-Python, Pandas, NumPy, Scikit-Learn, dan Jupyter Notebook.`,
+### Stack Pengembangan
+Next.js, TailwindCSS, TypeScript, dan Sanity CMS.`,
   },
   {
-    title: "Sistem Kasir Digital Kerajinan Bambu Pule",
-    category: "# Craft",
+    title: "Ruang Luang",
+    category: "# Community Space",
     description:
-      "Digitalisasi pembukuan dan kasir berbasis cloud untuk pelaku usaha mikro kerajinan anyaman bambu di Desa Pule.",
+      "Platform reservasi ruang kolaborasi dan coworking space kreatif pertama di Kabupaten Trenggalek.",
     image:
-      "https://images.unsplash.com/photo-1490226848259-7101e4a6d4eb?auto=format&fit=crop&q=80&w=800&h=500",
+      "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800&h=500",
     date: "Feb 02",
+    readingTime: "6 min",
+    techstack: ["react", "firebase", "pwa"],
+    liveUrl: "https://github.com",
+    githubUrl: "https://github.com",
+    contentMarkdown: `## Kolaborasi Tanpa Batas di Ruang Luang
+Ruang Luang didirikan untuk memfasilitasi kreator muda, UMKM, dan komunitas di Trenggalek agar memiliki tempat kerja bersama yang representatif.
+
+### Fitur Sistem Reservasi
+- **Booking Online:** Memilih dan memesan ruang meeting atau meja kerja harian secara instan.
+- **Event Tracker:** Kalender interaktif untuk memantau seminar, workshop, dan pelatihan yang diselenggarakan.
+
+### Teknologi Pendukung
+React, Firebase Fire Store, Progressive Web App (PWA), dan TailwindCSS.`,
+  },
+  {
+    title: "Panggon Dolan",
+    category: "# Tourism",
+    description:
+      "Portal pemesanan paket wisata lokal terintegrasi untuk eksplorasi destinasi alam dan kuliner di Trenggalek.",
+    image:
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&q=80&w=800&h=500",
+    date: "Mar 10",
+    readingTime: "8 min",
+    techstack: ["react", "nodejs", "postgresql"],
+    liveUrl: "https://github.com",
+    githubUrl: "https://github.com",
+    contentMarkdown: `## Menjelajah Trenggalek Bersama Panggon Dolan
+Panggon Dolan menghadirkan paket perjalanan wisata yang dirancang khusus untuk mengenalkan keindahan pantai dan cita rasa kuliner khas Trenggalek.
+
+### Layanan Utama
+- **E-Ticketing Terpadu:** Beli tiket masuk wisata pantai Prigi, Karanggongso, dan goa Lowo dalam satu transaksi.
+- **Panduan Wisatawan:** Informasi rute perjalanan, homestay warga setempat, dan kontak pemandu wisata berlisensi.
+
+### Stack Pengembangan
+React, Node.js Express, PostgreSQL, dan Bootstrap CSS.`,
+  },
+  {
+    title: "Rumah Nenek",
+    category: "# Culinary",
+    description:
+      "Website profil dan galeri resep masakan tradisional Jawa yang dipertahankan turun-temurun oleh kuliner Rumah Nenek.",
+    image:
+      "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&q=80&w=800&h=500",
+    date: "Apr 18",
+    readingTime: "4 min",
+    techstack: ["nextjs", "tailwindcss", "typescript"],
+    liveUrl: "https://github.com",
+    githubUrl: "https://github.com",
+    contentMarkdown: `## Cita Rasa Tradisional Rumah Nenek
+Rumah Nenek menyajikan hidangan khas Jawa dengan bumbu otentik untuk mengobati kerinduan kuliner masakan rumah.
+
+### Solusi Website
+- **Katalog Menu:** Menyajikan galeri foto hidangan lengkap beserta detail bahan rempah pilihan.
+- **Pesan Antar Hub:** Integrasi pemesanan WhatsApp langsung untuk mempermudah delivery warga sekitar.
+
+### Teknologi Yang Digunakan
+Next.js, TailwindCSS, TypeScript, dan Vercel Hosting.`,
+  },
+  {
+    title: "Ndalem Kopi",
+    category: "# Food & Beverage",
+    description:
+      "Website e-commerce eksklusif untuk pemasaran produk bubuk kopi arabika dan robusta kemasan hasil tani lokal.",
+    image:
+      "https://images.unsplash.com/photo-1497935586351-b67a49e012bf?auto=format&fit=crop&q=80&w=800&h=500",
+    date: "May 05",
+    readingTime: "7 min",
+    techstack: ["nextjs", "tailwindcss", "typescript"],
+    liveUrl: "https://github.com",
+    githubUrl: "https://github.com",
+    contentMarkdown: `## Pemasaran Kopi Ndalem Kopi
+Ndalem Kopi berfokus pada pengemasan dan penjualan produk biji dan bubuk kopi asli pegunungan Trenggalek langsung ke penikmat kopi nasional.
+
+### Fitur Toko Online
+- **Keranjang Belanja:** Proses checkout instan terintegrasi dengan perhitungan ongkir otomatis.
+- **Gerbang Pembayaran:** Mendukung transaksi QRIS otomatis untuk kenyamanan berbelanja.
+
+### Stack Pengembangan
+Next.js, TailwindCSS, Midtrans API, dan Node Mailer.`,
+  },
+  {
+    title: "Ringin Resort",
+    category: "# Hospitality",
+    description:
+      "Landing page interaktif untuk reservasi villa dan pemesanan layanan penginapan asri bernuansa pedesaan.",
+    image:
+      "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&q=80&w=800&h=500",
+    date: "Jun 12",
     readingTime: "5 min",
     techstack: ["react", "firebase", "pwa"],
     liveUrl: "https://github.com",
     githubUrl: "https://github.com",
-    contentMarkdown: `## Solusi Kasir Digital
-Membantu UMKM anyaman bambu di Desa Pule berpindah dari pembukuan manual menggunakan kertas menuju pencatatan digital otomatis berbasis Cloud.
+    contentMarkdown: `## Kenyamanan Alami di Ringin Resort
+Ringin Resort menawarkan pengalaman menginap mewah di tengah ketenangan suasana alam pedesaan Trenggalek yang asri.
 
-### Manfaat Utama
-- **Pencatatan Real-time:** Memantau stok anyaman bambu langsung dari HP.
-- **Laporan Bulanan:** Menghasilkan PDF laporan laba rugi secara instan.
-- **Multi-kasir:** Bisa dioperasikan oleh beberapa admin kelompok pengrajin secara bersamaan.
+### Fitur Digital
+- **Pratinjau Kamar 360:** Galeri foto interaktif detail fasilitas setiap tipe villa.
+- **Form Reservasi:** Pengisian data tanggal menginap langsung terintegrasi ke dashboard manajemen resort.
 
-### Fitur Teknis
-PWA (Progressive Web App), Firebase Database, Offline support, dan cetak struk via bluetooth printer.`,
-  },
-  {
-    title: "Branding & E-Commerce Kopi Khas Trenggalek",
-    category: "# Food & Beverage",
-    description:
-      "Pengembangan identitas visual brand dan website e-commerce modern untuk mendongkrak penjualan kopi robusta lokal.",
-    image:
-      "https://images.unsplash.com/photo-1497935586351-b67a49e012bf?auto=format&fit=crop&q=80&w=800&h=500",
-    date: "Mar 10",
-    readingTime: "6 min",
-    techstack: ["nextjs", "tailwindcss", "typescript"],
-    liveUrl: "https://github.com",
-    githubUrl: "https://github.com",
-    contentMarkdown: `## Akselerasi Kopi Robusta Lokal
-Pengembangan branding menyeluruh dan website toko online eksklusif guna memasarkan biji kopi pilihan hasil tani pegunungan Trenggalek ke kancah nasional.
-
-### Poin Utama Branding
-- **Desain Kemasan Baru:** Mengangkat nilai kearifan lokal dengan estetika modern.
-- **Website Mandiri:** Transaksi e-commerce langsung tanpa potongan komisi marketplace.
-- **Payment Gateway:** Mendukung QRIS, GoPay, dan Transfer Bank otomatis.
-
-### Stack Pengembangan
-Next.js, TailwindCSS, Midtrans API, dan Sanity CMS.`,
-  },
-  {
-    title: "Portal Wisata Pantai Prigi Terintegrasi",
-    category: "# Tourism",
-    description:
-      "Sistem e-ticketing dan informasi destinasi wisata pantai terintegrasi guna memberikan kemudahan bagi wisatawan nusantara.",
-    image:
-      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&q=80&w=800&h=500",
-    date: "Apr 22",
-    readingTime: "10 min",
-    techstack: ["react", "nodejs", "postgresql"],
-    liveUrl: "https://github.com",
-    githubUrl: "https://github.com",
-    contentMarkdown: `## Portal Informasi & E-Ticketing
-Modernisasi layanan wisata pantai Prigi guna menghadirkan pemesanan tiket online terpadu dan direktori pemandu wisata lokal.
-
-### Fitur Unggulan
-- **Tiket QR Code:** Wisatawan cukup memindai kode di gerbang masuk tanpa perlu antre tiket fisik.
-- **Peta Destinasi Interaktif:** Penunjuk rute spot foto menarik dan fasilitas umum pantai.
-- **Direktori Kuliner & Penginapan:** Memajang usaha kuliner seafood dan homestay warga lokal.
-
-### Arsitektur Sistem
-React, Node.js Express, PostgreSQL, dan QR Code Generator API.`,
+### Stack Arsitektur
+React, Firebase database, TailwindCSS, dan Framer Motion.`,
   },
 ];
 
@@ -126,7 +166,7 @@ const TECH_SVGS: Record<string, React.ReactNode> = {
   ),
   jupyter: (
     <svg className="size-5 text-neutral-400 fill-current hover:text-[#F37626] transition-colors" viewBox="0 0 24 24" title="Jupyter">
-      <path d="M12 0a1.8 1.8 0 00-1.285.536l-8.48 8.48A1.8 1.8 0 002.77 12l8.48 8.48a1.8 1.8 0 002.545 0l8.48-8.48A1.8 1.8 0 0021.23 10l-8.48-8.48A1.8 1.8 0 0012 0zm0 3.6a1.4 1.4 0 011 1.4v1.4a1.4 1.4 0 01-1 1.4 1.4 1.4 0 01-1-1.4V5a1.4 1.4 0 011-1.4z"/>
+      <path d="M12 0a1.8 1.8 0 00-1.285.536l-8.48 8.48A1.8 1.8 0 002.77 12l8.48 8.48a1.8 1.8 0 002.545 0l8.48-8.48A1.8 1.8 0 0021.23 10l-8.48-8.48A1.8 1.8 0 0012 0zm0 3.6a1.4 1.4 0 01-1 1.4v1.4a1.4 1.4 0 01-1 1.4 1.4 1.4 0 01-1-1.4V5a1.4 1.4 0 011-1.4z"/>
     </svg>
   ),
   nextjs: (
@@ -181,14 +221,18 @@ export function ProjectList() {
             href={`/project/${idx}`}
             className="flex flex-col group cursor-pointer"
           >
-            {/* Image Container — Aspect 1:1 (Square), borderless, transparent bg, full image */}
-            <div className="w-full aspect-square overflow-hidden rounded-2xl relative transition-all duration-500">
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-700 ease-out"
-                loading="lazy"
-              />
+            {/* Image Container — Forced 1:1 Aspect Ratio (Square) via absolute padding-bottom, borderless, transparent/subtle placeholder */}
+            <div 
+              className="w-full relative overflow-hidden rounded-2xl border border-neutral-900 transition-all duration-500"
+              style={{ paddingBottom: "100%", height: 0 }}
+            >
+              {/* Sleek Dark Placeholder Box */}
+              <div className="absolute inset-0 flex flex-col items-center justify-center text-neutral-700 bg-gradient-to-br from-neutral-900/30 to-neutral-950/80 group-hover:text-neutral-500 transition-colors">
+                <svg className="size-8 stroke-[1.2px]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375 0 11-.75 0 .375 0 01.75 0z" />
+                </svg>
+                <span className="text-[10px] mt-2.5 font-mono tracking-widest uppercase">Foto UMKM</span>
+              </div>
             </div>
 
             {/* Content Side */}
