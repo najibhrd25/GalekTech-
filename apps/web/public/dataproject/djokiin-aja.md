@@ -1,23 +1,15 @@
-<!-- 
-REKOMENDASI PENGISIAN DESKRIPSI UMKM GALEKTECH:
-Gunakan format markdown di bawah ini untuk mengisi penjelasan proyek. Minimal berisi:
+## Mempermudah Akses Jasa Pengerjaan Tugas dengan Djokiin Aja
 
-1. ## Profil / Latar Belakang
-   Jelaskan secara singkat profil UMKM, masalah yang dihadapi, atau tujuan utama proyek.
-   
-2. ### Layanan Utama / Fitur Sistem
-   Gunakan list (diawali dengan "- ") untuk menuliskan poin-poin fitur atau solusi yang ditawarkan.
-   
-3. ### Teknologi yang Digunakan / Arsitektur
-   Sebutkan stack teknologi, framework, atau library utama yang dipakai.
--->
-
-## Gaming Lebih Seru Bersama Djokiin Aja
-Djokiin Aja hadir sebagai platform profesional yang menjembatani gamers lokal dengan joki tepercaya untuk menaikkan rank akun game favorit secara aman dan cepat.
+Djokiin Aja merupakan platform berbasis web yang menyediakan layanan jasa pengerjaan tugas untuk membantu mahasiswa dan pengguna dalam memenuhi berbagai kebutuhan akademik. Platform ini dirancang untuk mempermudah proses pencarian layanan, pemilihan jasa, hingga pemesanan dalam satu sistem yang lebih terstruktur.
 
 ### Layanan & Fitur Utama
-- **Jasa Joki Terpercaya:** Layanan joki game populer dengan jaminan kerahasiaan dan keamanan akun 100%.
-- **Turnamen E-Sports:** Fasilitas registrasi dan update informasi turnamen game lokal maupun nasional.
+
+* **Layanan Pengerjaan Tugas:** Menyediakan berbagai layanan bantuan pengerjaan tugas sesuai dengan kebutuhan pengguna.
+* **Katalog Layanan:** Menampilkan berbagai jenis layanan yang tersedia beserta informasi yang diperlukan pengguna.
+* **Pemesanan Jasa:** Memungkinkan pengguna memilih layanan dan melakukan pemesanan secara online.
+* **Pengelolaan Pesanan:** Membantu pengguna dan penyedia jasa mengelola proses pengerjaan tugas secara lebih terstruktur.
+* **Manajemen Pengguna:** Menyediakan pengelolaan akun bagi pengguna dalam menggunakan layanan platform.
 
 ### Arsitektur Teknologi
+
 React, Firebase, Progressive Web App (PWA), dan TailwindCSS.
