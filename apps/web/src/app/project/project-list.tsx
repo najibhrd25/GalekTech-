@@ -50,7 +50,7 @@ export const PROJECTS: Project[] = [
     category: "# Creative Studio",
     description:
       "Layanan agensi kreatif terintegrasi untuk pembuatan konten digital, branding visual, dan promosi UMKM di Trenggalek.",
-    image: "",
+    image: "/mockup/Alrent.png",
     date: "Mar 10",
     readingTime: "8 min",
     techstack: ["react", "nodejs", "postgresql"],
