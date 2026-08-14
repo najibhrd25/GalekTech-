@@ -20,7 +20,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     image: "/images/najib.jpeg",
     scale: 1.5, // Sesuaikan zoom di sini
     linkedin: "https://www.linkedin.com/in/najibbahrudin",
-    translateY: "-28px",
+    translateY: "-45px",
   },
   {
     name: "Dimas",
