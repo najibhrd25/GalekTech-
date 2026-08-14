@@ -43,7 +43,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     role: "Frontend Engineer",
     image: "/images/Erlangga.jpeg",
     scale: 1.1,
-    linkedin: "https://www.linkedin.com/in/erlangga-username",
+    linkedin: "https://www.linkedin.com/in/erlanggaaghna",
     translateY: "-100px",
   },
 ];
