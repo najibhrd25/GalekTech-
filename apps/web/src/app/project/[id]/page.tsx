@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { useParams } from "next/navigation";
 import Link from "next/link";
 import { Calendar, Clock, Globe } from "lucide-react";
@@ -65,9 +66,27 @@ function parseMarkdown(md: string) {
 
 export default function ProjectDetailPage() {
   const params = useParams();
-  const id = Number(params.id);
+  const id = Number(params?.id);
 
   const project = PROJECTS[id];
+  const [markdownContent, setMarkdownContent] = useState<string>("");
+
+  useEffect(() => {
+    if (project?.markdownFile) {
+      fetch(project.markdownFile)
+        .then((res) => {
+          if (!res.ok) throw new Error("Markdown not found");
+          return res.text();
+        })
+        .then((text) => setMarkdownContent(text))
+        .catch((err) => {
+          console.error("Failed to load project markdown:", err);
+          setMarkdownContent("");
+        });
+    } else {
+      setMarkdownContent("");
+    }
+  }, [project?.markdownFile]);
 
   if (!project) {
     return (
@@ -83,16 +102,6 @@ export default function ProjectDetailPage() {
   return (
     <main className="min-h-screen bg-black text-white pt-32 pb-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto space-y-12">
-        {/* Cover Image */}
-        <div className="w-full aspect-[16/9] overflow-hidden rounded-3xl border border-neutral-900 bg-neutral-950 shadow-2xl relative">
-          <img
-            src={project.image}
-            alt={project.title}
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
-        </div>
-
         {/* Title and Metadata wrapped in premium layout */}
         <div className="space-y-6">
           <div className="flex flex-wrap items-center gap-3">
@@ -136,10 +145,10 @@ export default function ProjectDetailPage() {
 
         {/* Content */}
         <article className="prose prose-invert max-w-none pt-8 border-t border-neutral-900">
-          {project.contentMarkdown ? (
-            parseMarkdown(project.contentMarkdown)
+          {markdownContent ? (
+            parseMarkdown(markdownContent)
           ) : (
-            <p className="text-neutral-300 leading-relaxed text-lg">
+            <p className="text-neutral-350 leading-relaxed text-lg">
               {project.description}
             </p>
           )}

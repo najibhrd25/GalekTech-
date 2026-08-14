@@ -12,6 +12,7 @@ interface Project {
   date: string;
   readingTime: string;
   contentMarkdown?: string;
+  markdownFile?: string;
   techstack?: string[];
   liveUrl?: string;
   githubUrl?: string;
@@ -19,136 +20,69 @@ interface Project {
 
 export const PROJECTS: Project[] = [
   {
-    title: "Unfold Coffee",
+    title: "Unfold Caffe",
     category: "# Food & Beverage",
     description:
       "Website profil interaktif dan menu digital modern untuk menyajikan varian kopi robusta lokal khas Trenggalek.",
-    image:
-      "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&q=80&w=800&h=500",
+    image: "",
     date: "Jan 15",
     readingTime: "5 min",
     techstack: ["nextjs", "tailwindcss", "typescript"],
     liveUrl: "https://github.com",
     githubUrl: "https://github.com",
-    contentMarkdown: `## Profil Unfold Coffee
-Unfold Coffee adalah titik temu para pecinta kopi di Trenggalek, menyajikan biji kopi robusta lokal berkualitas dengan nuansa modern.
-
-### Inisiatif Digital
-- **Menu Digital QR:** Pengunjung dapat memindai kode QR di meja untuk melihat menu lengkap secara real-time.
-- **Profil Toko:** Menyajikan filosofi penyeduhan kopi dan sejarah kerja sama dengan petani kopi lokal.
-
-### Stack Pengembangan
-Next.js, TailwindCSS, TypeScript, dan Sanity CMS.`,
+    markdownFile: "/dataproject/unfold-caffe.md",
   },
   {
-    title: "Ruang Luang",
-    category: "# Community Space",
+    title: "Djokiin Aja",
+    category: "# Game Services",
     description:
-      "Platform reservasi ruang kolaborasi dan coworking space kreatif pertama di Kabupaten Trenggalek.",
-    image:
-      "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800&h=500",
+      "Platform penyedia layanan joki game profesional dan pendaftaran turnamen e-sports lokal pertama di Kabupaten Trenggalek.",
+    image: "/mockup/DjokiinAja.png",
     date: "Feb 02",
     readingTime: "6 min",
     techstack: ["react", "firebase", "pwa"],
     liveUrl: "https://github.com",
     githubUrl: "https://github.com",
-    contentMarkdown: `## Kolaborasi Tanpa Batas di Ruang Luang
-Ruang Luang didirikan untuk memfasilitasi kreator muda, UMKM, dan komunitas di Trenggalek agar memiliki tempat kerja bersama yang representatif.
-
-### Fitur Sistem Reservasi
-- **Booking Online:** Memilih dan memesan ruang meeting atau meja kerja harian secara instan.
-- **Event Tracker:** Kalender interaktif untuk memantau seminar, workshop, dan pelatihan yang diselenggarakan.
-
-### Teknologi Pendukung
-React, Firebase Fire Store, Progressive Web App (PWA), dan TailwindCSS.`,
+    markdownFile: "/dataproject/djokiin-aja.md",
   },
   {
-    title: "Panggon Dolan",
-    category: "# Tourism",
+    title: "Alrent Creative",
+    category: "# Creative Studio",
     description:
-      "Portal pemesanan paket wisata lokal terintegrasi untuk eksplorasi destinasi alam dan kuliner di Trenggalek.",
-    image:
-      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&q=80&w=800&h=500",
+      "Layanan agensi kreatif terintegrasi untuk pembuatan konten digital, branding visual, dan promosi UMKM di Trenggalek.",
+    image: "",
     date: "Mar 10",
     readingTime: "8 min",
     techstack: ["react", "nodejs", "postgresql"],
     liveUrl: "https://github.com",
     githubUrl: "https://github.com",
-    contentMarkdown: `## Menjelajah Trenggalek Bersama Panggon Dolan
-Panggon Dolan menghadirkan paket perjalanan wisata yang dirancang khusus untuk mengenalkan keindahan pantai dan cita rasa kuliner khas Trenggalek.
-
-### Layanan Utama
-- **E-Ticketing Terpadu:** Beli tiket masuk wisata pantai Prigi, Karanggongso, dan goa Lowo dalam satu transaksi.
-- **Panduan Wisatawan:** Informasi rute perjalanan, homestay warga setempat, dan kontak pemandu wisata berlisensi.
-
-### Stack Pengembangan
-React, Node.js Express, PostgreSQL, dan Bootstrap CSS.`,
+    markdownFile: "/dataproject/alrent-creative.md",
   },
   {
-    title: "Rumah Nenek",
-    category: "# Culinary",
+    title: "Parcel Trenggalek",
+    category: "# E-Commerce",
     description:
-      "Website profil dan galeri resep masakan tradisional Jawa yang dipertahankan turun-temurun oleh kuliner Rumah Nenek.",
-    image:
-      "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&q=80&w=800&h=500",
+      "Platform e-commerce lokal penyedia berbagai macam parcel & buah tangan khas Kabupaten Trenggalek secara kustom.",
+    image: "",
     date: "Apr 18",
     readingTime: "4 min",
     techstack: ["nextjs", "tailwindcss", "typescript"],
     liveUrl: "https://github.com",
     githubUrl: "https://github.com",
-    contentMarkdown: `## Cita Rasa Tradisional Rumah Nenek
-Rumah Nenek menyajikan hidangan khas Jawa dengan bumbu otentik untuk mengobati kerinduan kuliner masakan rumah.
-
-### Solusi Website
-- **Katalog Menu:** Menyajikan galeri foto hidangan lengkap beserta detail bahan rempah pilihan.
-- **Pesan Antar Hub:** Integrasi pemesanan WhatsApp langsung untuk mempermudah delivery warga sekitar.
-
-### Teknologi Yang Digunakan
-Next.js, TailwindCSS, TypeScript, dan Vercel Hosting.`,
+    markdownFile: "/dataproject/parcel-trenggalek.md",
   },
   {
-    title: "Ndalem Kopi",
+    title: "Moro moro",
     category: "# Food & Beverage",
     description:
-      "Website e-commerce eksklusif untuk pemasaran produk bubuk kopi arabika dan robusta kemasan hasil tani lokal.",
-    image:
-      "https://images.unsplash.com/photo-1497935586351-b67a49e012bf?auto=format&fit=crop&q=80&w=800&h=500",
+      "Website profil dan menu interaktif untuk mengenalkan sajian kuliner tradisional dan minuman lokal bercita rasa khas.",
+    image: "",
     date: "May 05",
     readingTime: "7 min",
     techstack: ["nextjs", "tailwindcss", "typescript"],
     liveUrl: "https://github.com",
     githubUrl: "https://github.com",
-    contentMarkdown: `## Pemasaran Kopi Ndalem Kopi
-Ndalem Kopi berfokus pada pengemasan dan penjualan produk biji dan bubuk kopi asli pegunungan Trenggalek langsung ke penikmat kopi nasional.
-
-### Fitur Toko Online
-- **Keranjang Belanja:** Proses checkout instan terintegrasi dengan perhitungan ongkir otomatis.
-- **Gerbang Pembayaran:** Mendukung transaksi QRIS otomatis untuk kenyamanan berbelanja.
-
-### Stack Pengembangan
-Next.js, TailwindCSS, Midtrans API, dan Node Mailer.`,
-  },
-  {
-    title: "Ringin Resort",
-    category: "# Hospitality",
-    description:
-      "Landing page interaktif untuk reservasi villa dan pemesanan layanan penginapan asri bernuansa pedesaan.",
-    image:
-      "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&q=80&w=800&h=500",
-    date: "Jun 12",
-    readingTime: "5 min",
-    techstack: ["react", "firebase", "pwa"],
-    liveUrl: "https://github.com",
-    githubUrl: "https://github.com",
-    contentMarkdown: `## Kenyamanan Alami di Ringin Resort
-Ringin Resort menawarkan pengalaman menginap mewah di tengah ketenangan suasana alam pedesaan Trenggalek yang asri.
-
-### Fitur Digital
-- **Pratinjau Kamar 360:** Galeri foto interaktif detail fasilitas setiap tipe villa.
-- **Form Reservasi:** Pengisian data tanggal menginap langsung terintegrasi ke dashboard manajemen resort.
-
-### Stack Arsitektur
-React, Firebase database, TailwindCSS, dan Framer Motion.`,
+    markdownFile: "/dataproject/moro-moro.md",
   },
 ];
 
@@ -175,7 +109,7 @@ const TECH_SVGS: Record<string, React.ReactNode> = {
   nextjs: (
     <svg className="size-5 text-neutral-400 fill-current hover:text-white transition-colors" viewBox="0 0 24 24">
       <title>Next.js</title>
-      <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.892 18.005l-5.692-7.33v7.33H10.28V7.995h1.92l5.692 7.33v-7.33h1.92v10.01h-1.92z"/>
+      <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-3.237 17.5v-11h2.247c1.78 0 2.825.807 2.825 2.589 0 1.488-.77 2.378-2.361 2.493v.068c1.693.092 2.551 1.077 2.551 2.766 0 1.942-1.07 3.084-3.089 3.084h-2.173zm1.61-6.702h.67c.783 0 1.206-.312 1.206-1.127 0-.776-.412-1.092-1.206-1.092h-.67v2.219zm0 5.161h.699c.874 0 1.341-.351 1.341-1.291 0-.916-.467-1.282-1.341-1.282h-.699v2.573z"/>
     </svg>
   ),
   tailwindcss: (
@@ -237,13 +171,21 @@ export function ProjectList() {
               className="w-full relative overflow-hidden rounded-2xl border border-neutral-900 transition-all duration-500"
               style={{ paddingBottom: "100%", height: 0 }}
             >
-              {/* Sleek Dark Placeholder Box */}
-              <div className="absolute inset-0 flex flex-col items-center justify-center text-neutral-700 bg-gradient-to-br from-neutral-900/30 to-neutral-950/80 group-hover:text-neutral-500 transition-colors">
-                <svg className="size-8 stroke-[1.2px]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375 0 11-.75 0 .375 0 01.75 0z" />
-                </svg>
-                <span className="text-[10px] mt-2.5 font-mono tracking-widest uppercase">Foto UMKM</span>
-              </div>
+              {project.image ? (
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-500"
+                />
+              ) : (
+                /* Sleek Dark Placeholder Box */
+                <div className="absolute inset-0 flex flex-col items-center justify-center text-neutral-700 bg-gradient-to-br from-neutral-900/30 to-neutral-950/80 group-hover:text-neutral-500 transition-colors">
+                  <svg className="size-8 stroke-[1.2px]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375 0 11-.75 0 .375 0 01.75 0z" />
+                  </svg>
+                  <span className="text-[10px] mt-2.5 font-mono tracking-widest uppercase">Foto UMKM</span>
+                </div>
+              )}
             </div>
 
             {/* Content Side */}

@@ -9,7 +9,8 @@ interface TeamMember {
   role: string;
   image: string;
   scale: number; // Mengatur zoom per orang (contoh: 1.0, 1.15, 1.25)
-  objectPosition: string; // Mengatur geser kanan-kiri/atas-bawah per orang (contoh: "center", "50% 20%")
+  linkedin?: string;
+  translateY?: string; // Menggeser gambar ke atas/bawah secara manual (contoh: "-10px", "5%", "-15%")
 }
 
 export const TEAM_MEMBERS: TeamMember[] = [
@@ -18,21 +19,32 @@ export const TEAM_MEMBERS: TeamMember[] = [
     role: "Product Manajer",
     image: "/images/najib.jpeg",
     scale: 1.5, // Sesuaikan zoom di sini
-    objectPosition: "50% 70%", // Sesuaikan geser kanan-kiri (X) dan atas-bawah (Y) di sini
+    linkedin: "https://www.linkedin.com/in/najibbahrudin",
+    translateY: "-28px",
   },
   {
     name: "Dimas",
     role: "Frontend Engineer",
     image: "/images/dimas.jpg",
     scale: 1.0, // Sesuaikan zoom di sini
-    objectPosition: "50% 50%", // Sesuaikan geser kanan-kiri (X) dan atas-bawah (Y) di sini
+    linkedin: "https://www.linkedin.com/in/dimas-username",
+    translateY: "-35px",
   },
   {
     name: "Dava",
     role: "Frontend Engineer",
-    image: "/images/Dapa.jpg",
-    scale: 1.2, // Sesuaikan zoom di sini
-    objectPosition: "50% -60%", // Sesuaikan geser kanan-kiri (X) dan atas-bawah (Y) di sini
+    image: "/images/Dava.jpeg",
+    scale: 1.0, // Sesuaikan zoom di sini
+    linkedin: "https://www.linkedin.com/in/dava-username",
+    translateY: "0px",
+  },
+  {
+    name: "Erlangga",
+    role: "Frontend Engineer",
+    image: "/images/Erlangga.jpeg",
+    scale: 1.1,
+    linkedin: "https://www.linkedin.com/in/erlangga-username",
+    translateY: "-100px",
   },
 ];
 
@@ -41,37 +53,53 @@ export function TeamSection() {
 
   return (
     <section className="w-full max-w-7xl px-4 sm:px-6 md:px-8 mb-24">
-      <h2 className="text-4xl font-bold mb-16 text-center text-white">
-        People Behind <span className="text-pink-500">GalekTech</span>
-      </h2>
+      <div className="flex items-center gap-4 mb-16">
+        <div className="h-[2px] w-12 bg-gradient-to-r from-transparent to-pink-500" />
+        <h2 className="text-2xl sm:text-4xl font-bold text-white whitespace-nowrap">
+          People behind <span className="text-pink-500">GalekTech</span>
+        </h2>
+        <div className="h-[2px] flex-1 bg-gradient-to-r from-pink-500 to-transparent" />
+      </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {TEAM_MEMBERS.map((person, idx) => (
-          <div key={idx} className="flex flex-col group">
+          <div key={idx} className="flex flex-col group bg-zinc-900/40 rounded-tl-[64px] rounded-tr-2xl rounded-b-2xl border border-neutral-800/50 overflow-hidden transition-all duration-300">
             {/* Image Container with Zoom trigger */}
             <div
               onClick={() => setSelectedImage(person.image)}
-              className="w-full aspect-[3/4] bg-neutral-900 overflow-hidden mb-4 rounded-2xl relative cursor-zoom-in border border-neutral-800/40 transition-all duration-300"
+              className="w-full aspect-square bg-neutral-900 overflow-hidden relative cursor-zoom-in"
             >
-              <motion.img
+              <img
                 src={person.image}
                 alt={person.name}
-                className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-out"
+                className="w-full h-full object-cover"
                 style={{
-                  objectPosition: person.objectPosition,
-                  transformOrigin: person.objectPosition,
+                  transform: `scale(${person.scale}) translateY(${person.translateY || "0px"})`,
                 }}
-                initial={{ scale: person.scale }}
-                whileHover={{ scale: person.scale * 1.05 }}
-                transition={{ duration: 0.5, ease: "easeOut" }}
               />
             </div>
 
-            {/* Info */}
-            <h3 className="text-2xl font-bold text-white leading-tight mb-1">
-              {person.name}
-            </h3>
-            <p className="text-pink-500 text-base font-medium">{person.role}</p>
+            {/* Info Footer */}
+            <div className="p-5 flex flex-col justify-between flex-1 bg-zinc-950/80 border-t border-neutral-800/30">
+              <div className="flex items-start justify-between gap-2">
+                <h3 className="text-lg font-bold text-white leading-tight">
+                  {person.name}
+                </h3>
+                {person.linkedin && (
+                  <a
+                    href={person.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-neutral-400 hover:text-white transition-colors mt-0.5"
+                  >
+                    <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                      <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                    </svg>
+                  </a>
+                )}
+              </div>
+              <p className="text-zinc-400 text-sm mt-1">{person.role}</p>
+            </div>
           </div>
         ))}
       </div>
