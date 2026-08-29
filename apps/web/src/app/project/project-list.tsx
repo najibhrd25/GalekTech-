@@ -32,36 +32,10 @@ export const PROJECTS: Project[] = [
     markdownFile: "/dataproject/bapperida.md",
   },
   {
-    title: "Unfold Caffe",
-    category: "# Food & Beverage",
-    description:
-      "Website profil interaktif dan menu digital modern untuk menyajikan varian kopi robusta lokal khas Trenggalek.",
-    image: "",
-    date: "Jan 15",
-    readingTime: "5 min",
-    techstack: ["nextjs", "tailwindcss", "typescript"],
-    liveUrl: "https://github.com",
-    githubUrl: "https://github.com",
-    markdownFile: "/dataproject/unfold-caffe.md",
-  },
-  {
-    title: "Djokiin Aja",
-    category: "# Game Services",
-    description:
-      "Platform penyedia layanan joki game profesional dan pendaftaran turnamen e-sports lokal pertama di Kabupaten Trenggalek.",
-    image: "/mockup/DjokiinAja.png",
-    date: "Feb 02",
-    readingTime: "6 min",
-    techstack: ["react", "firebase", "pwa"],
-    liveUrl: "https://github.com",
-    githubUrl: "https://github.com",
-    markdownFile: "/dataproject/djokiin-aja.md",
-  },
-  {
     title: "Alrent Creative",
     category: "# Creative Studio",
     description:
-      "Layanan agensi kreatif terintegrasi untuk pembuatan konten digital, branding visual, dan promosi UMKM di Trenggalek.",
+      "Layanan penyewaan peralatan outdoor dan kebutuhan event terpercaya di Kabupaten Trenggalek.",
     image: "/mockup/AlrentCreative.png",
     date: "Mar 10",
     readingTime: "8 min",
@@ -84,17 +58,17 @@ export const PROJECTS: Project[] = [
     markdownFile: "/dataproject/parcel-trenggalek.md",
   },
   {
-    title: "Moro moro",
+    title: "Unfold Caffe",
     category: "# Food & Beverage",
     description:
-      "Website profil dan menu interaktif untuk mengenalkan sajian kuliner tradisional dan minuman lokal bercita rasa khas.",
+      "Website profil interaktif dan menu digital modern untuk menyajikan varian kopi robusta lokal khas Trenggalek.",
     image: "",
-    date: "May 05",
-    readingTime: "7 min",
+    date: "Jan 15",
+    readingTime: "5 min",
     techstack: ["nextjs", "tailwindcss", "typescript"],
     liveUrl: "https://github.com",
     githubUrl: "https://github.com",
-    markdownFile: "/dataproject/moro-moro.md",
+    markdownFile: "/dataproject/unfold-caffe.md",
   },
   {
     title: "Ndalem Kopi",
@@ -107,6 +81,32 @@ export const PROJECTS: Project[] = [
     techstack: ["nextjs", "tailwindcss", "typescript"],
     githubUrl: "https://github.com/najibhrd25/ndalemkopi",
     markdownFile: "/dataproject/ndalem-kopi.md",
+  },
+  {
+    title: "MurniSaji",
+    category: "# Culinary",
+    description:
+      "Katalog digital dan platform pemesanan produk olahan pangan lokal UMKM Trenggalek spesialis aneka abon berkualitas.",
+    image: "",
+    date: "Aug 29",
+    readingTime: "4 min",
+    techstack: ["nextjs", "tailwindcss", "typescript"],
+    liveUrl: "https://github.com",
+    githubUrl: "https://github.com",
+    markdownFile: "/dataproject/murni-saji.md",
+  },
+  {
+    title: "Djokiin Aja",
+    category: "# Academic & Services",
+    description:
+      "Platform layanan bantuan pengerjaan tugas dan bimbingan akademik terstruktur untuk mahasiswa dan pelajar.",
+    image: "/mockup/DjokiinAja.png",
+    date: "Feb 02",
+    readingTime: "6 min",
+    techstack: ["react", "firebase", "pwa"],
+    liveUrl: "https://github.com",
+    githubUrl: "https://github.com",
+    markdownFile: "/dataproject/djokiin-aja.md",
   },
 ];
 

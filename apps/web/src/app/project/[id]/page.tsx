@@ -8,60 +8,113 @@ import { PROJECTS } from "../project-list";
 
 function renderTextWithMarkdown(text: string) {
   // Regex parsing for bold **text** and italic *text*
-  const parts = text.split(/(\*\*|\*)/g);
-  let isBold = false;
-  let isItalic = false;
+  const parts = text.split(/(\*\*[^*]+\*\*|\*[^*]+\*)/g);
 
   return parts.map((part, i) => {
-    if (part === "**") {
-      isBold = !isBold;
-      return null;
+    if (part.startsWith("**") && part.endsWith("**")) {
+      return (
+        <strong key={i} className="font-semibold text-white">
+          {part.slice(2, -2)}
+        </strong>
+      );
     }
-    if (part === "*") {
-      isItalic = !isItalic;
-      return null;
+    if (part.startsWith("*") && part.endsWith("*")) {
+      return (
+        <em key={i} className="italic text-neutral-300">
+          {part.slice(1, -1)}
+        </em>
+      );
     }
-    if (isBold) {
-      return <strong key={i} className="font-bold text-white">{part}</strong>;
-    }
-    if (isItalic) {
-      return <em key={i} className="italic text-neutral-200">{part}</em>;
-    }
-    return part;
+    return (
+      <span key={i} className="font-normal">
+        {part}
+      </span>
+    );
   });
 }
 
 function parseMarkdown(md: string) {
-  return md.split("\n\n").map((block, index) => {
-    if (block.startsWith("### ")) {
-      return (
-        <h4 key={index} className="text-lg md:text-xl font-bold text-white mt-6 mb-3">
-          {renderTextWithMarkdown(block.replace("### ", ""))}
-        </h4>
-      );
+  // Remove HTML comments
+  const cleanMd = md.replace(/<!--[\s\S]*?-->/g, "").trim();
+  const lines = cleanMd.split("\n");
+  const elements: React.ReactNode[] = [];
+  let currentList: string[] = [];
+  let currentParagraph: string[] = [];
+
+  const flushParagraph = (key: string) => {
+    if (currentParagraph.length > 0) {
+      const text = currentParagraph.join(" ").trim();
+      if (text) {
+        elements.push(
+          <p key={key} className="text-neutral-300 font-normal text-base md:text-lg leading-relaxed mb-4">
+            {renderTextWithMarkdown(text)}
+          </p>
+        );
+      }
+      currentParagraph = [];
     }
-    if (block.startsWith("## ")) {
-      return (
-        <h3 key={index} className="text-2xl md:text-3xl font-bold text-white mt-8 mb-4 border-b border-neutral-900 pb-2">
-          {renderTextWithMarkdown(block.replace("## ", ""))}
-        </h3>
-      );
-    }
-    if (block.startsWith("- ")) {
-      return (
-        <ul key={index} className="list-disc pl-6 space-y-2 text-neutral-300 my-4">
-          {block.split("\n").map((li, i) => (
-            <li key={i}>{renderTextWithMarkdown(li.replace("- ", ""))}</li>
+  };
+
+  const flushList = (key: string) => {
+    if (currentList.length > 0) {
+      elements.push(
+        <ul key={key} className="list-disc pl-6 space-y-2 text-neutral-300 font-normal text-base md:text-lg my-4">
+          {currentList.map((item, idx) => (
+            <li key={idx} className="leading-relaxed font-normal">
+              {renderTextWithMarkdown(item)}
+            </li>
           ))}
         </ul>
       );
+      currentList = [];
     }
-    return (
-      <p key={index} className="text-neutral-350 text-base md:text-lg leading-relaxed my-4">
-        {renderTextWithMarkdown(block)}
-      </p>
-    );
+  };
+
+  lines.forEach((rawLine, idx) => {
+    const line = rawLine.trim();
+
+    if (!line) {
+      flushParagraph(`p-${idx}`);
+      flushList(`ul-${idx}`);
+      return;
+    }
+
+    if (line.startsWith("### ")) {
+      flushParagraph(`p-pre-h3-${idx}`);
+      flushList(`ul-pre-h3-${idx}`);
+      elements.push(
+        <h4 key={`h3-${idx}`} className="text-lg md:text-xl font-bold text-white mt-6 mb-2">
+          {renderTextWithMarkdown(line.replace("### ", ""))}
+        </h4>
+      );
+      return;
+    }
+
+    if (line.startsWith("## ")) {
+      flushParagraph(`p-pre-h2-${idx}`);
+      flushList(`ul-pre-h2-${idx}`);
+      elements.push(
+        <h3 key={`h2-${idx}`} className="text-xl md:text-2xl font-bold text-white mt-8 mb-3 pb-1 border-b border-neutral-800">
+          {renderTextWithMarkdown(line.replace("## ", ""))}
+        </h3>
+      );
+      return;
+    }
+
+    if (line.startsWith("- ") || line.startsWith("* ")) {
+      flushParagraph(`p-pre-li-${idx}`);
+      currentList.push(line.replace(/^[-*]\s+/, ""));
+      return;
+    }
+
+    flushList(`ul-pre-p-${idx}`);
+    currentParagraph.push(line);
   });
+
+  flushParagraph("p-end");
+  flushList("ul-end");
+
+  return elements;
 }
 
 export default function ProjectDetailPage() {
@@ -144,11 +197,11 @@ export default function ProjectDetailPage() {
         </div>
 
         {/* Content */}
-        <article className="prose prose-invert max-w-none pt-8 border-t border-neutral-900">
+        <article className="w-full max-w-none pt-8 border-t border-neutral-900">
           {markdownContent ? (
             parseMarkdown(markdownContent)
           ) : (
-            <p className="text-neutral-350 leading-relaxed text-lg">
+            <p className="text-neutral-300 font-normal text-base md:text-lg leading-relaxed">
               {project.description}
             </p>
           )}
