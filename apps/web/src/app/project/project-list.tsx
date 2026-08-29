@@ -20,6 +20,18 @@ interface Project {
 
 export const PROJECTS: Project[] = [
   {
+    title: "Bapperida Trenggalek",
+    category: "# Government",
+    description:
+      "Sistem informasi dan portal resmi Badan Perencanaan Pembangunan, Riset, dan Inovasi Kabupaten Trenggalek.",
+    image: "",
+    date: "Aug 25",
+    readingTime: "5 min",
+    techstack: ["nextjs", "tailwindcss", "typescript"],
+    liveUrl: "https://bapperida.vercel.app",
+    markdownFile: "/dataproject/bapperida.md",
+  },
+  {
     title: "Unfold Caffe",
     category: "# Food & Beverage",
     description:
@@ -83,6 +95,18 @@ export const PROJECTS: Project[] = [
     liveUrl: "https://github.com",
     githubUrl: "https://github.com",
     markdownFile: "/dataproject/moro-moro.md",
+  },
+  {
+    title: "Ndalem Kopi",
+    category: "# Food & Beverage",
+    description:
+      "Website profil dan e-commerce eksklusif untuk pemasaran produk bubuk kopi arabika dan robusta khas tani lokal Trenggalek.",
+    image: "",
+    date: "Aug 28",
+    readingTime: "6 min",
+    techstack: ["nextjs", "tailwindcss", "typescript"],
+    githubUrl: "https://github.com/najibhrd25/ndalemkopi",
+    markdownFile: "/dataproject/ndalem-kopi.md",
   },
 ];
 
