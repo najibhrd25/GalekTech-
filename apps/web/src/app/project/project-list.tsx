@@ -28,7 +28,7 @@ export const PROJECTS: Project[] = [
     date: "Aug 25",
     readingTime: "5 min",
     techstack: ["nextjs", "tailwindcss", "typescript"],
-    liveUrl: "https://bapperida.vercel.app",
+    liveUrl: "https://baperida.vercel.app",
     markdownFile: "/dataproject/bapperida.md",
   },
   {
