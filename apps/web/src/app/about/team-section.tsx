@@ -38,14 +38,6 @@ export const TEAM_MEMBERS: TeamMember[] = [
     linkedin: "https://www.linkedin.com/in/dava-username",
     translateY: "0px",
   },
-  {
-    name: "Erlangga",
-    role: "Frontend Engineer",
-    image: "/images/Erlangga.jpeg",
-    scale: 1.1,
-    linkedin: "https://www.linkedin.com/in/erlanggaaghna",
-    translateY: "-100px",
-  },
 ];
 
 export function TeamSection() {
@@ -61,7 +53,7 @@ export function TeamSection() {
         <div className="h-[2px] flex-1 bg-gradient-to-r from-pink-500 to-transparent" />
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {TEAM_MEMBERS.map((person, idx) => (
           <div key={idx} className="flex flex-col group bg-zinc-900/40 rounded-tl-[64px] rounded-tr-2xl rounded-b-2xl border border-neutral-800/50 overflow-hidden transition-all duration-300">
             {/* Image Container with Zoom trigger */}
