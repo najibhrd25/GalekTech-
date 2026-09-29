@@ -108,6 +108,45 @@ export const PROJECTS: Project[] = [
     githubUrl: "https://github.com",
     markdownFile: "/dataproject/djokiin-aja.md",
   },
+  {
+    title: "Seccar IDN",
+    category: "# Automotive & Services",
+    description:
+      "Platform inovasi digital untuk ekosistem otomotif dan layanan perawatan serta keamanan kendaraan modern di Indonesia.",
+    image: "",
+    date: "Sep 15",
+    readingTime: "5 min",
+    techstack: ["nextjs", "tailwindcss", "typescript"],
+    liveUrl: "https://github.com",
+    githubUrl: "https://github.com",
+    markdownFile: "/dataproject/seccar-idn.md",
+  },
+  {
+    title: "IPRS BEM ITS",
+    category: "# Organization & System",
+    description:
+      "Integrated Public Relations System untuk manajemen, otomatisasi, dan pengelolaan alur kerja hubungan masyarakat BEM ITS.",
+    image: "",
+    date: "Sep 20",
+    readingTime: "6 min",
+    techstack: ["nextjs", "tailwindcss", "typescript"],
+    liveUrl: "https://github.com",
+    githubUrl: "https://github.com",
+    markdownFile: "/dataproject/iprs-bem-its.md",
+  },
+  {
+    title: "Hubungan Luar BEM ITS",
+    category: "# Organization & Portal",
+    description:
+      "Website dan portal media informasi resmi milik Hubungan Luar (Hublu) yang diberikan kepada seluruh internal pengurus BEM ITS.",
+    image: "",
+    date: "Sep 25",
+    readingTime: "5 min",
+    techstack: ["nextjs", "tailwindcss", "typescript"],
+    liveUrl: "https://github.com",
+    githubUrl: "https://github.com",
+    markdownFile: "/dataproject/hublu-bem-its.md",
+  },
 ];
 
 // Tech stack SVGs
