@@ -10,12 +10,12 @@ import {
 } from "motion/react";
 import { useEffect, useRef } from "react";
 
-import { SanityButtons } from "@/components/elements/sanity-buttons";
+import { SanityButtons } from "@/components/sanity/sanity-buttons";
 import {
   DecorativePitchCardLeft,
   DecorativePitchCardRight,
-} from "@/components/homepage/decorative-pitch-cards";
-import { Pointer } from "@/components/shared/pointer";
+} from "@/components/sections/decorative-pitch-cards";
+import { Pointer } from "@/components/ui/pointer";
 import type { PagebuilderType } from "@/types";
 
 type HeroProps = PagebuilderType<"heroSection">;

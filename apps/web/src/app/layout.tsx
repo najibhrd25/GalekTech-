@@ -7,13 +7,13 @@ import { VisualEditing } from "next-sanity/visual-editing";
 import { Suspense } from "react";
 import { preconnect, prefetchDNS } from "react-dom";
 
-import { FooterServer, FooterSkeleton } from "@/components/footer";
-import { CombinedJsonLd } from "@/components/json-ld";
-import { Navbar } from "@/components/navbar";
-import { PreviewBar } from "@/components/preview-bar";
-import { Providers } from "@/components/providers";
-import { ServiceWorkerRegister } from "@/components/sw-register";
-import { SplashScreen } from "@/components/splash-screen";
+import { FooterServer, FooterSkeleton } from "@/components/layouts/footer";
+import { CombinedJsonLd } from "@/components/sanity/json-ld";
+import { Navbar } from "@/components/layouts/navbar";
+import { PreviewBar } from "@/components/layouts/preview-bar";
+import { Providers } from "@/components/layouts/providers";
+import { ServiceWorkerRegister } from "@/components/layouts/sw-register";
+import { SplashScreen } from "@/components/layouts/splash-screen";
 
 const fontSans = Geist({
   subsets: ["latin"],

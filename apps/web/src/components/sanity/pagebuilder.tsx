@@ -5,14 +5,14 @@ import { env } from "@workspace/env/client";
 import { createDataAttribute } from "next-sanity";
 import { useCallback, useMemo } from "react";
 
-import { Faqs } from "@/components/homepage/faqs";
-import { Hero } from "@/components/homepage/hero";
-import { Integrations } from "@/components/homepage/integrations";
-import { LogoTicker } from "@/components/homepage/logo-ticker";
-import { TopPitches } from "@/components/homepage/top-pitches";
+import { Faqs } from "@/components/sections/faqs";
+import { Hero } from "@/components/sections/hero";
+import { Integrations } from "@/components/sections/integrations";
+import { LogoTicker } from "@/components/sections/logo-ticker";
+import { TopPitches } from "@/components/sections/top-pitches";
 import type { PageBuilderBlock, PageBuilderBlockTypes } from "@/types";
-import { FaqAccordion } from "./sections/faq-accordion";
-import { FeatureCardsWithIcon } from "./sections/feature-cards-with-icon";
+import { FaqAccordion } from "@/components/sections/faq-accordion";
+import { FeatureCardsWithIcon } from "@/components/sections/feature-cards-with-icon";
 
 export type PageBuilderProps = {
   readonly pageBuilder?: PageBuilderBlock[];

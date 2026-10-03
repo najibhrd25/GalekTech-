@@ -3,7 +3,7 @@
 import { cn } from "@workspace/ui/lib/utils";
 import { motion } from "motion/react";
 
-import { SanityImage } from "@/components/elements/sanity-image";
+import { SanityImage } from "@/components/sanity/sanity-image";
 import type { SanityImageProps } from "@/types";
 
 /** Single integration item shape used in the column. */

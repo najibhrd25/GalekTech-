@@ -5,9 +5,9 @@ import avatar1 from "@/../public/images/najib.jpeg";
 import avatar2 from "@/../public/images/dimas.jpg";
 import avatar3 from "@/../public/images/Dapa.jpg";
 import avatar4 from "@/../public/images/najib.jpeg";
-import { Tag } from "@/components/shared/tag";
+import { Tag } from "@/components/ui/tag";
 import type { PagebuilderType } from "@/types";
-import { RichText } from "../elements/rich-text";
+import { RichText } from "@/components/sanity/rich-text";
 
 type FeatureCardsWithIconProps = PagebuilderType<"featureCardsIcon">;
 

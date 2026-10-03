@@ -4,8 +4,8 @@ import { cn } from "@workspace/ui/lib/utils";
 import { AnimatePresence, motion } from "motion/react";
 import { useState } from "react";
 
-import { RichText } from "@/components/elements/rich-text";
-import { Tag } from "@/components/shared/tag";
+import { RichText } from "@/components/sanity/rich-text";
+import { Tag } from "@/components/ui/tag";
 import type { PagebuilderType } from "@/types";
 
 type FaqsSectionProps = PagebuilderType<"faqSection">;

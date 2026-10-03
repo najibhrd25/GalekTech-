@@ -9,8 +9,8 @@ import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 
 import type { PagebuilderType } from "@/types";
-import { RichText } from "../elements/rich-text";
-import { FaqJsonLd } from "../json-ld";
+import { RichText } from "@/components/sanity/rich-text";
+import { FaqJsonLd } from "@/components/sanity/json-ld";
 
 type FaqAccordionProps = PagebuilderType<"faqAccordion">;
 

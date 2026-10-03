@@ -1,7 +1,7 @@
 "use client";
 
-import { IntegrationsColumn } from "@/components/shared/integrations-column";
-import { Tag } from "@/components/shared/tag";
+import { IntegrationsColumn } from "@/components/ui/integrations-column";
+import { Tag } from "@/components/ui/tag";
 import type { PagebuilderType } from "@/types";
 
 type IntegrationsSectionProps = PagebuilderType<"integrationsSection">;

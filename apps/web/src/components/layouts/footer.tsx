@@ -2,8 +2,8 @@ import { sanityFetch } from "@workspace/sanity/live";
 import { queryFooterData } from "@workspace/sanity/query";
 import Link from "next/link";
 
-import { RichText } from "./elements/rich-text";
-import { TextHoverEffect } from "./shared/text-hover-effect";
+import { RichText } from "@/components/sanity/rich-text";
+import { TextHoverEffect } from "@/components/ui/text-hover-effect";
 
 function rebrandData(data: any) {
   if (!data) return data;

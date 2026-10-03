@@ -1,7 +1,7 @@
 import { sanityFetch } from "@workspace/sanity/live";
 import { queryHomePageData } from "@workspace/sanity/query";
 
-import { PageBuilder } from "@/components/pagebuilder";
+import { PageBuilder } from "@/components/sanity/pagebuilder";
 import { getSEOMetadata } from "@/lib/seo";
 
 function rebrandData(data: any) {

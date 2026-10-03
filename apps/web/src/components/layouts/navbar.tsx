@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { ModeToggle } from "./mode-toggle";
-import { VentureLogo } from "./venture-logo";
+import { VentureLogo } from "@/components/ui/venture-logo";
 import { MobileMenu } from "./mobile-menu";
 
 const STATIC_LINKS = [

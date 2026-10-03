@@ -8,7 +8,7 @@ import {
   CarouselPrevious,
 } from "@workspace/ui/components/carousel";
 import { Flame, Eye, ArrowUpRight } from "lucide-react";
-import { Tag } from "@/components/shared/tag";
+import { Tag } from "@/components/ui/tag";
 import type { PagebuilderType } from "@/types";
 
 type TopPitchesProps = PagebuilderType<"topPitchesSection">;
