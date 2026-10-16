@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import type { Maybe, SanityImageProps } from "@/types";
-import { SanityImage } from "./elements/sanity-image";
+import { SanityImage } from "@/components/sanity/sanity-image";
 
 const LOGO_URL = "/galektech.png";
 
