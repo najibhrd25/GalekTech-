@@ -213,8 +213,16 @@ export function Hero(props: HeroProps) {
           )}
 
           {title && (
-            <h1 className="mx-auto mt-6 max-w-4xl text-center text-4xl sm:text-5xl md:text-6xl lg:text-8xl">
-              {title}
+            <h1 className="mx-auto mt-6 max-w-4xl text-center text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-extrabold tracking-tight leading-[1.12]">
+              {typeof title === "string" && title.includes("Meet") ? (
+                <>
+                  <span>{title.split("Meet")[0]?.trim()}</span>
+                  <br />
+                  <span className="inline-block mt-1">Meet {title.split("Meet")[1]?.trim()}</span>
+                </>
+              ) : (
+                title
+              )}
             </h1>
           )}
 

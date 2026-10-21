@@ -104,7 +104,7 @@ const mockHomePage = {
       _key: "hero",
       _type: "heroSection",
       badge: "Introducing VentureDen v1.0",
-      title: "Where Startups Meet Capital",
+      title: "Where Startups\nMeet Capital",
       subtitle: "VentureDen connects high-growth startups, pitch to top investors, and explore venture opportunities globally.",
       buttons: [
         { text: "Explore Features", variant: "primary", _key: "b1", _type: "button", href: "#features" },
