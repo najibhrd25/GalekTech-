@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Calendar, Clock, Globe, Github, ArrowLeft } from "lucide-react";
 import { PROJECTS } from "../project-list";
 import { ProjectGalleryCarousel, GalleryImage } from "@/components/project/project-gallery-carousel";
+import { TechStackList } from "@/components/project/tech-icon";
 
 function renderTextWithMarkdown(text: string) {
   // Regex parsing for links [label](url), bold **text**, and italic *text*
@@ -279,20 +280,28 @@ export default function ProjectDetailPage() {
 
         {/* Title and Metadata */}
         <div className="space-y-6">
-          <div className="flex flex-wrap items-center gap-3">
-            <span className="inline-flex items-center px-3.5 py-1 rounded-full text-xs font-semibold tracking-wide border border-pink-500/20 bg-pink-500/5 text-pink-400">
-              {project.category}
-            </span>
-            <div className="flex items-center gap-4 text-xs md:text-sm text-neutral-500 font-medium">
-              <span className="flex items-center gap-1.5">
-                <Calendar size={14} className="text-neutral-600" />
-                {project.date}
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <div className="flex flex-wrap items-center gap-3">
+              <span className="inline-flex items-center px-3.5 py-1 rounded-full text-xs font-semibold tracking-wide border border-pink-500/20 bg-pink-500/5 text-pink-400">
+                {project.category}
               </span>
-              <span className="flex items-center gap-1.5">
-                <Clock size={14} className="text-neutral-600" />
-                {project.readingTime}
-              </span>
+              <div className="flex items-center gap-4 text-xs md:text-sm text-neutral-500 font-medium">
+                <span className="flex items-center gap-1.5">
+                  <Calendar size={14} className="text-neutral-600" />
+                  {project.date}
+                </span>
+                <span className="flex items-center gap-1.5">
+                  <Clock size={14} className="text-neutral-600" />
+                  {project.readingTime}
+                </span>
+              </div>
             </div>
+
+            {project.techstack && project.techstack.length > 0 && (
+              <div className="flex items-center gap-2">
+                <TechStackList techs={project.techstack} iconClassName="size-4" />
+              </div>
+            )}
           </div>
 
           <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-tight text-white">

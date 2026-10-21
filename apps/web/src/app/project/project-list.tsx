@@ -3,6 +3,7 @@
 import { motion } from "motion/react";
 import { Globe, Github } from "lucide-react";
 import Link from "next/link";
+import { TechStackList } from "@/components/project/tech-icon";
 
 export interface Project {
   title: string;
@@ -126,25 +127,6 @@ export const PROJECTS: Project[] = [
   },
 ];
 
-// High-fidelity Tech Stack icons mapped to public/icon SVGs
-const TECH_ICONS: Record<string, { label: string; icon: string }> = {
-  nextjs: { label: "Next.js", icon: "/icon/nextjs.svg" },
-  react: { label: "React", icon: "/icon/react.svg" },
-  typescript: { label: "TypeScript", icon: "/icon/typescript.svg" },
-  tailwindcss: { label: "TailwindCSS", icon: "/icon/tailwindcss.svg" },
-  javascript: { label: "JavaScript", icon: "/icon/javascript.svg" },
-  postgresql: { label: "PostgreSQL", icon: "/icon/postgresql.svg" },
-  nodejs: { label: "Node.js", icon: "/icon/nodejs.svg" },
-  python: { label: "Python", icon: "/icon/python.svg" },
-  wordpress: { label: "WordPress", icon: "/icon/wordpress.svg" },
-  supabase: { label: "Supabase", icon: "/icon/supabase.svg" },
-  firebase: { label: "Firebase", icon: "/icon/firebase.svg" },
-  figma: { label: "Figma", icon: "/icon/figma.svg" },
-  golang: { label: "Go", icon: "/icon/golang_dark.svg" },
-  framer: { label: "Framer", icon: "/icon/framer_dark.svg" },
-  vscode: { label: "VS Code", icon: "/icon/vscode.svg" },
-};
-
 export function ProjectList() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 w-full">
@@ -191,33 +173,12 @@ export function ProjectList() {
 
               {/* Hover techstack & live site - slides up and fades in on hover */}
               <div className="flex items-center justify-between mt-3 pt-3 border-t border-neutral-900/60 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
-                {/* Tech Stack Icons */}
-                <div className="flex items-center gap-2">
-                  {project.techstack?.map((tech) => {
-                    const item = TECH_ICONS[tech.toLowerCase()];
-                    if (!item) {
-                      return (
-                        <span key={tech} className="text-[10px] font-mono text-neutral-500 uppercase">
-                          {tech}
-                        </span>
-                      );
-                    }
-                    return (
-                      <div
-                        key={tech}
-                        className="relative flex items-center justify-center p-1 rounded-md bg-neutral-900/60 border border-neutral-800/80 hover:border-pink-500/50 hover:bg-neutral-850 transition-all"
-                        title={item.label}
-                      >
-                        <img
-                          src={item.icon}
-                          alt={item.label}
-                          className="size-4 object-contain"
-                          loading="lazy"
-                        />
-                      </div>
-                    );
-                  })}
-                </div>
+                {/* Tech Stack Icons - Sleek, borderless, monochrome */}
+                <TechStackList
+                  techs={project.techstack}
+                  className="flex items-center gap-2.5"
+                  iconClassName="size-3.5"
+                />
 
                 {/* Links */}
                 <div className="flex items-center gap-3">
