@@ -30,8 +30,8 @@ aspect: 16:9
 badge: Result
 title: Preview Antarmuka ALRent Creative
 aspect: 16:9
-/mockup/AlrentCreative.png | Halaman Utama & Tampilan Katalog Interaktif
-/projects/ALRENT.webp | Detail Produk & Sistem Kalkulasi Biaya Sewa
+/projects/Alrent.webp | Halaman Utama & Tampilan Katalog Interaktif
+/projects/Alrent.webp | Detail Produk & Sistem Kalkulasi Biaya Sewa
 /projects/Galektech.webp | Tampilan Responsif Mobile & Navigasi
 :::
 

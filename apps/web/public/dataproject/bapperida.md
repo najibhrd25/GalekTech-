@@ -38,9 +38,9 @@ aspect: 16:9
 badge: Result
 title: Preview Portal Inovasi & Dashboard Bapperida
 aspect: 16:9
-/projects/Galektech.webp | Tampilan Antarmuka Sistem Inovasi Daerah
+/projects/Bapperida.webp | Tampilan Antarmuka Sistem Inovasi Daerah
 /projects/PARCEL.webp | Visualisasi Indikator Capaian pada Executive Dashboard
-/projects/ALRENT.webp | Integrasi Halaman Portal Publik Berita & Regulasi
+/projects/Alrent.webp | Integrasi Halaman Portal Publik Berita & Regulasi
 :::
 
 ---

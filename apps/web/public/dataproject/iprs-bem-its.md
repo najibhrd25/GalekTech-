@@ -55,9 +55,9 @@ Menghadapi kondisi sistem yang terkompromi, perbaikan dilakukan melalui metodolo
 badge: Result
 title: Preview Implementasi & Tampilan Sistem
 aspect: 16:9
-/projects/Galektech.webp | Dashboard Manajemen Relasi & Disposisi Proposal
+/projects/IPRS ITS.webp | Dashboard Manajemen Relasi & Disposisi Proposal
 /projects/PARCEL.webp | Database Kemitraan Terpusat & Monitoring Status
-/projects/ALRENT.webp | Panel Kontrol Administrator Hublu BEM ITS
+/projects/Alrent.webp | Panel Kontrol Administrator Hublu BEM ITS
 :::
 
 ---

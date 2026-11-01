@@ -27,7 +27,7 @@ export const PROJECTS: Project[] = [
     category: "# Government & Innovation",
     description:
       "Portal resmi dan digitalisasi Bapperida Trenggalek dengan fokus Sistem Inovasi Daerah & Executive Dashboard berbasis Next.js.",
-    image: "/projects/Galektech.webp",
+    image: "/projects/Bapperida.webp",
     date: "Aug 25",
     readingTime: "5 min",
     techstack: ["nextjs", "typescript", "tailwindcss", "wordpress"],
@@ -39,7 +39,7 @@ export const PROJECTS: Project[] = [
     category: "# Creative Studio",
     description:
       "Layanan penyewaan peralatan outdoor dan kebutuhan event terpercaya di Kabupaten Trenggalek.",
-    image: "/mockup/AlrentCreative.png",
+    image: "/projects/Alrent.webp",
     date: "Mar 10",
     readingTime: "8 min",
     techstack: ["react", "nodejs", "postgresql", "tailwindcss"],
@@ -51,7 +51,7 @@ export const PROJECTS: Project[] = [
     category: "# Security & Engineering",
     description:
       "Integrated Public Relations System BEM ITS: Audit forensik keamanan, eliminasi webshell backdoor, dan modernisasi sistem disposisi proposal kemitraan kampus.",
-    image: "/projects/safe.webp",
+    image: "/projects/IPRS ITS.webp",
     date: "Sep 20",
     readingTime: "6 min",
     techstack: ["nodejs", "postgresql", "javascript", "tailwindcss"],
@@ -67,6 +67,7 @@ export const PROJECTS: Project[] = [
     date: "Apr 18",
     readingTime: "4 min",
     techstack: ["nextjs", "tailwindcss", "typescript"],
+    liveUrl: "https://parcel-trenggalek.vercel.app/",
     markdownFile: "/dataproject/parcel-trenggalek.md",
   },
   {
@@ -74,10 +75,11 @@ export const PROJECTS: Project[] = [
     category: "# Food & Beverage",
     description:
       "Website profil interaktif dan menu digital modern untuk menyajikan varian kopi robusta lokal khas Trenggalek.",
-    image: "/projects/Flowmath.webp",
+    image: "/projects/UNFOLD.webp",
     date: "Jan 15",
     readingTime: "5 min",
     techstack: ["nextjs", "tailwindcss", "typescript"],
+    liveUrl: "https://unfoldcoffe.vercel.app/",
     markdownFile: "/dataproject/unfold-caffe.md",
   },
   {
@@ -85,10 +87,11 @@ export const PROJECTS: Project[] = [
     category: "# Food & Beverage",
     description:
       "Website profil dan e-commerce eksklusif untuk pemasaran produk bubuk kopi arabika dan robusta khas tani lokal Trenggalek.",
-    image: "/projects/Side Project.webp",
+    image: "/projects/NDALEM COFFE.webp",
     date: "Aug 28",
     readingTime: "6 min",
     techstack: ["nextjs", "tailwindcss", "typescript"],
+    liveUrl: "https://ndalem-kopi-xi.vercel.app",
     githubUrl: "https://github.com/najibhrd25/ndalemkopi",
     markdownFile: "/dataproject/ndalem-kopi.md",
   },
